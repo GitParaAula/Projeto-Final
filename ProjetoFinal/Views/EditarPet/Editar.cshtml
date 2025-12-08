@@ -1,0 +1,59 @@
+﻿@model ProjetoFinal.Models.Pet
+
+@{
+    ViewData["Title"] = "Editar Pet";
+}
+
+<link href="~/css/editarpet.css" rel="stylesheet" />
+
+<div class="cadastrar-container">
+
+    <div class="cadastrar-card">
+        <h2 class="titulo text-center mb-4">Editar Pet</h2>
+
+        <form asp-action="ConfirmarEdicao" method="post" onsubmit="return confirmar()">
+
+            <input type="hidden" asp-for="Codigo_Pet" />
+
+            <div class="form-group mb-3">
+                <label>Nome</label>
+                <input class="form-control" asp-for="Nome" required />
+            </div>
+
+            <div class="form-group mb-3">
+                <label>Tipo</label>
+                <input class="form-control" asp-for="Tipo" required />
+            </div>
+
+            <div class="form-group mb-3">
+                <label>Raça</label>
+                <input class="form-control" asp-for="Raca" required />
+            </div>
+
+            <div class="form-group mb-3">
+                <label>Porte</label>
+                <input class="form-control" asp-for="Porte" maxlength="1" required />
+            </div>
+
+            <div class="form-group mb-3">
+                <label>Idade</label>
+                <input class="form-control" type="number" asp-for="Idade" required />
+            </div>
+
+            <button type="submit" class="btn btn-success w-100 mb-3">Confirmar Edição</button>
+        </form>
+
+        <a class="btn btn-voltar"
+           asp-controller="EditarPet"
+           asp-action="Consultar">
+            Voltar
+        </a>
+    </div>
+
+</div>
+
+<script>
+    function confirmar() {
+        return confirm("Deseja realmente salvar as alterações?");
+    }
+</script>

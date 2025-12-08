@@ -1,0 +1,52 @@
+﻿@model ProjetoFinal.Models.Plano
+
+@{
+    ViewData["Title"] = "Editar Plano";
+}
+
+<link href="~/css/editarplano.css" rel="stylesheet" />
+
+<div class="cadastrar-container">
+
+    <div class="cadastrar-card">
+
+        <h2 class="titulo text-center mb-4">Editar Plano</h2>
+
+        <form asp-action="Editar" method="post" onsubmit="return confirmarEdicao();">
+
+            <input type="hidden" asp-for="Codigo_Plano" />
+
+            <div class="mb-3">
+                <label asp-for="Nome" class="form-label">Nome do Plano</label>
+                <input asp-for="Nome" class="form-control" required />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Valor" class="form-label">Valor (R$)</label>
+                <input asp-for="Valor" class="form-control" step="0.01" required />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Duracao" class="form-label">Duração</label>
+                <input asp-for="Duracao" class="form-control" type="date" required />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Requisitos" class="form-label">Requisitos</label>
+                <textarea asp-for="Requisitos" class="form-control"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-success w-100 mb-2">Confirmar Edição</button>
+            <a class="btn btn-voltar w-100" asp-action="ConsultaPlano">Voltar</a>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script>
+    function confirmarEdicao() {
+        return confirm("Deseja realmente salvar as alterações?");
+    }
+</script>

@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Cadastro Concluído";
+}
+
+<link href="~/css/aviso.css" rel="stylesheet" />
+
+<div class="aviso-container">
+
+    <div class="aviso-card">
+
+        <h3 class="aviso-title">Cadastro Realizado!</h3>
+
+        <p class="aviso-text">
+            O funcionário foi cadastrado com sucesso.
+        </p>
+
+        <p class="aviso-info">
+            A senha inicial do funcionário será o próprio
+            <strong>CPF cadastrado</strong>.<br />
+            Mantenha essa informação em segurança.
+        </p>
+
+        <a class="btn-primary-vp large"
+           asp-controller="LoginFunc3"
+           asp-action="LoginFunc3">
+            Ir para o Login do Funcionário
+        </a>
+
+        <a class="btn-secondary-vp small"
+           asp-controller="Home"
+           asp-action="Index">
+            Voltar à Página Inicial
+        </a>
+
+    </div>
+
+</div>

@@ -1,0 +1,46 @@
+﻿@model List<ProjetoFinal.Models.Pagamento>
+
+@{
+    ViewData["Title"] = "Histórico de Pagamentos";
+}
+
+<link href="~/css/historicocliente.css" rel="stylesheet" />
+
+<div class="container mt-5" style="max-width: 800px;">
+    <h2 class="text-center mb-4">Últimos Pagamentos do Cliente</h2>
+
+    @if (Model == null || !Model.Any())
+    {
+        <p class="text-center text-danger">Nenhum pagamento encontrado para este cliente.</p>
+    }
+    else
+    {
+        <table class="table table-bordered table-striped">
+            <thead class="table-primary">
+                <tr>
+                    <th>Código Pagamento</th>
+                    <th>Titular</th>
+                    <th>Valor (R$)</th>
+                    <th>Método de Pagamento</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var p in Model)
+                {
+                    <tr>
+                        <td>@p.Codigo_Pagamento</td>
+                        <td>@p.Titular</td>
+                        <td>@p.Valor</td>
+                        <td>@p.MetodoPagamento</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+
+    <a asp-controller="Pagamento"
+       asp-action="ConsultaHistorico"
+       class="btn btn-secondary w-100 mt-3">
+        Voltar
+    </a>
+</div>

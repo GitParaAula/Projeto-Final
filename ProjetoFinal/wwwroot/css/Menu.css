@@ -1,0 +1,88 @@
+﻿/* Container da logo */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.logo {
+    max-width: 500px; /* ajusta o tamanho da logo */
+    height: auto;
+}
+
+/* NAVBAR */
+.custom-navbar {
+    background-color: #00698B;
+    padding: 12px 0;
+    box-shadow: 0 0 10px rgba(0,0,0,0.20);
+}
+
+.nav-container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-title {
+    color: #FFFDFE;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+    .nav-links li a {
+        color: #FFFDFE;
+        font-size: 16px;
+        text-decoration: none;
+        padding: 6px 0;
+        transition: 0.2s;
+    }
+
+        .nav-links li a:hover {
+            color: #E1A658;
+        }
+
+/* BOTÃO "SAIR" */
+.btn-exit {
+    background-color: #E1A658;
+    color: #FFFDFE;
+    padding: 8px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+    .btn-exit:hover {
+        background-color: #c68d47;
+    }
+
+/* CARD CENTRAL */
+.welcome-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.welcome-card {
+    background-color: #FFFDFE;
+    width: 450px;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.15);
+}
+
+    .welcome-card h2 {
+        color: #00698B;
+        font-weight: 700;
+    }

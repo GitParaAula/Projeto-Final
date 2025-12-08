@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Gerenciar";
+}
+
+<link href="~/css/gerenciar.css" rel="stylesheet" />
+
+<div class="cadastrar-container">
+    <div class="cadastrar-card">
+
+        <h2 class="titulo">O que deseja gerenciar?</h2>
+
+        <div class="opcoes">
+
+            <a class="btn-opcao"
+               asp-controller="AtribuirPet"
+               asp-action="AtribuirPet">
+                Atribuir Pet a Dono
+            </a>
+
+            <a class="btn-opcao"
+               asp-controller="ComprarPlano"
+               asp-action="Index">
+                Comprar Plano
+            </a>
+
+        </div>
+
+        <a class="btn-voltar"
+           asp-controller="Menu"
+           asp-action="Menu">
+            Voltar
+        </a>
+
+    </div>
+</div>

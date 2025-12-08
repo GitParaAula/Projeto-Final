@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Cadastro de Pet";
+}
+
+<link href="~/css/cadastropet.css" rel="stylesheet" />
+
+@model ProjetoFinal.Models.Pet
+
+<main class="content">
+    <div class="container" style="max-width: 700px;">
+
+        <h2 class="text-center mb-4">Cadastro de Pet</h2>
+
+        <form asp-action="Salvar" method="post" class="card-form">
+
+            <label>Nome do Pet</label>
+            <input class="form-control mb-2" asp-for="Nome" required />
+
+            <label>Tipo</label>
+            <input class="form-control mb-2" asp-for="Tipo" required />
+
+            <label>Raça</label>
+            <input class="form-control mb-2" asp-for="Raca" required />
+
+            <label>Porte</label>
+            <input class="form-control mb-2" asp-for="Porte" maxlength="1" required />
+
+            <label>Idade</label>
+            <input class="form-control mb-3" type="number" asp-for="Idade" required />
+
+            <button class="btn btn-primary w-100" type="submit">Cadastrar</button>
+
+        </form>
+
+        <a class="btn btn-secondary w-100 mt-3"
+           asp-controller="Cadastrar"
+           asp-action="Cadastrar">
+            Voltar
+        </a>
+
+    </div>
+</main>

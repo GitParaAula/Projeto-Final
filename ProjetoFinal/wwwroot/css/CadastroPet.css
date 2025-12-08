@@ -1,0 +1,131 @@
+﻿/* ============================
+   CADASTRO DE PET – PADRÃO UI
+   ============================ */
+
+/* Página inteira ocupando a tela */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #FFFDFE;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #1a1a1a;
+}
+
+/* Área que cresce e empurra o footer */
+main.content {
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 16px 24px;
+}
+
+/* Largura máxima */
+.container {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 12px;
+    box-sizing: border-box;
+}
+
+/* Card form igual ao do cliente */
+.card-form {
+    background: #ffffff;
+    padding: 26px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Títulos */
+h2 {
+    text-align: center;
+    color: #00698B;
+    font-weight: 700;
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-bottom: 6px;
+    color: #00698B;
+    font-weight: 600;
+}
+
+/* Inputs */
+.form-control {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 2px solid rgba(0,0,0,0.08);
+    margin-bottom: 12px;
+    transition: border-color .18s, box-shadow .18s;
+}
+
+    .form-control:focus {
+        border-color: #00698B;
+        box-shadow: 0 0 0 6px rgba(0,105,139,0.06);
+        outline: none;
+    }
+
+/* Botões */
+.btn {
+    display: inline-block;
+    padding: 12px;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+}
+
+.btn-primary {
+    background-color: #00698B;
+    color: #FFFDFE;
+}
+
+    .btn-primary:hover {
+        background-color: #005575;
+    }
+
+.btn-secondary {
+    background-color: #E1A658;
+    color: #FFFDFE;
+}
+
+    .btn-secondary:hover {
+        background-color: #c68d47;
+    }
+
+/* Garantir espaço embaixo */
+.card-form {
+    padding-bottom: 36px;
+}
+
+/* Caso footer tenha position fixed, cancelar */
+footer,
+.site-footer,
+.footer {
+    position: relative !important;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .container {
+        max-width: 95%;
+    }
+
+    .card-form {
+        padding: 20px;
+    }
+}

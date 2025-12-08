@@ -1,0 +1,55 @@
+﻿/* Container central */
+.cadastrar-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+/* Card branco */
+.cadastrar-card {
+    background-color: #FFFDFE;
+    width: 500px;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+/* Título */
+.titulo {
+    color: #00698B;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+/* Botões principais */
+.btn-opcao {
+    padding: 12px;
+    border: 2px solid #00698B;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #00698B;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+    .btn-opcao:hover {
+        background-color: #00698B;
+        color: #FFFDFE;
+    }
+
+/* Botão voltar */
+.btn-voltar {
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #E1A658;
+    color: #FFFDFE;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s;
+    display: block;
+}
+
+    .btn-voltar:hover {
+        background-color: #c68d47;
+    }

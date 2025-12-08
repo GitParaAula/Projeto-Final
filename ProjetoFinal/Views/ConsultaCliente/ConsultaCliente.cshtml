@@ -1,0 +1,57 @@
+﻿@model List<ProjetoFinal.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Consulta de Clientes";
+}
+
+<link href="~/css/consultacliente.css" rel="stylesheet" />
+
+<div class="container-consulta">
+
+    <h2 class="text-center mb-4">Consulta de Clientes</h2>
+
+    <!-- CAMPO DE BUSCA -->
+    <form method="get" asp-controller="ConsultaCliente" asp-action="ConsultaCliente" class="search-box mb-4 d-flex gap-2">
+        <input type="text" name="nome" class="form-control" placeholder="Digite o nome do cliente" />
+        <button type="submit" class="btn btn-primary">Buscar</button>
+    </form>
+
+    <!-- TABELA -->
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead class="table-primary-custom">
+                <tr>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Idade</th>
+                    <th>Email</th>
+                    <th>Endereço</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var c in Model)
+                {
+                    <tr>
+                        <td>@c.Nome</td>
+                        <td>@c.Cpf</td>
+                        <td>@c.Idade</td>
+                        <td>@c.Email</td>
+                        <td>
+                            Rua: @c.Endereco?.Rua <br />
+                            Nº: @c.Endereco?.Numero <br />
+                            Comp: @c.Endereco?.Complemento
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <a class="btn btn-secondary w-100 mt-3"
+       asp-controller="Consultar"
+       asp-action="Consultar">
+        Voltar
+    </a>
+
+</div>

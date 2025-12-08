@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Excluir";
+}
+
+<link href="~/css/excluir.css" rel="stylesheet" />
+
+<div class="cadastrar-container">
+    <div class="cadastrar-card">
+
+        <h2 class="titulo">O que deseja excluir?</h2>
+
+        <div class="opcoes">
+            <a class="btn-opcao"
+               asp-controller="ExcluirFuncionario"
+               asp-action="ExcluirFuncionario">
+                Funcionário
+            </a>
+
+            <a class="btn-opcao"
+               asp-controller="ExcluirCliente"
+               asp-action="ExcluirCliente">
+                Cliente
+            </a>
+
+            <a class="btn-opcao"
+               asp-controller="ExcluirPet"
+               asp-action="ExcluirPet">
+                Pet
+            </a>
+
+            <a class="btn-opcao"
+               asp-controller="ExcluirPlano"
+               asp-action="ExcluirPlano">
+                Plano
+            </a>
+        </div>
+
+        <a class="btn-voltar"
+           asp-controller="Menu"
+           asp-action="Menu">
+            Voltar
+        </a>
+
+    </div>
+</div>

@@ -1,0 +1,73 @@
+﻿@model List<ProjetoFinal.Models.Funcionario>
+
+@{
+    ViewData["Title"] = "Excluir Funcionário";
+}
+
+<link href="~/css/excluirfuncionario.css" rel="stylesheet" />
+
+<div class="cadastrar-container">
+
+    <div class="cadastrar-card">
+
+        <h2 class="titulo text-center mb-4">Excluir Funcionário</h2>
+
+        <!-- CAMPO DE BUSCA -->
+        <form method="get" asp-controller="ExcluirFuncionario" asp-action="ExcluirFuncionario" class="mb-4">
+            <div class="input-group">
+                <input type="text" name="nome" class="form-control" placeholder="Digite o nome do funcionário" />
+                <button type="submit" class="btn btn-primary">Buscar</button>
+            </div>
+        </form>
+
+        <!-- FORM HIDDEN PARA EXCLUSÃO -->
+        <form id="formExcluir" method="post" asp-controller="ExcluirFuncionario" asp-action="Excluir">
+            <input type="hidden" id="idExcluir" name="id" />
+        </form>
+
+        <!-- TABELA -->
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead class="table-danger">
+                    <tr>
+                        <th>Nome</th>
+                        <th>CPF</th>
+                        <th>RG</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var f in Model)
+                    {
+                        <tr>
+                            <td>@f.Nome</td>
+                            <td>@f.Cpf</td>
+                            <td>@f.Rg</td>
+                            <td>
+                                <button class="btn btn-danger btn-sm"
+                                        onclick="confirmarExclusao(@f.Codigo_funcionario)">
+                                    Excluir
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <a class="btn btn-voltar w-100 mt-3" asp-controller="Excluir" asp-action="Excluir">
+            Voltar
+        </a>
+
+    </div>
+
+</div>
+
+<script>
+    function confirmarExclusao(id) {
+        if (confirm("Tem certeza que deseja EXCLUIR este funcionário? Esta ação não poderá ser desfeita.")) {
+            document.getElementById("idExcluir").value = id;
+            document.getElementById("formExcluir").submit();
+        }
+    }
+</script>

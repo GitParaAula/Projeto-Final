@@ -1,0 +1,59 @@
+﻿@{
+    ViewData["Title"] = "Consulta";
+}
+
+<link href="~/css/consultar.css" rel="stylesheet" />
+
+<div class="cadastrar-container">
+    <div class="cadastrar-card">
+
+        <h2 class="titulo">O que deseja consultar?</h2>
+
+        <div class="opcoes">
+
+            <a class="btn-opcao"
+               asp-controller="Consulta"
+               asp-action="Funcionario">
+                Funcionário
+            </a>
+
+            <a class="btn-opcao"
+               asp-controller="ConsultaCliente"
+               asp-action="ConsultaCliente">
+                Cliente
+            </a>
+
+            <a class="btn-opcao"
+               asp-controller="ConsultarPet"
+               asp-action="Consultar">
+                Pet
+            </a>
+
+            <a class="btn-opcao"
+               asp-controller="ConsultaPlano"
+               asp-action="ConsultaPlano">
+                Plano
+            </a>
+
+            <a class="btn-opcao"
+               asp-controller=""
+               asp-action="">
+                Histórico de Cadastros
+            </a>
+
+            <a class="btn-opcao"
+               asp-controller="Pagamento"
+               asp-action="ConsultaHistorico">
+                Histórico de Pagamentos
+            </a>
+
+        </div>
+
+        <a class="btn-voltar"
+           asp-controller="Menu"
+           asp-action="Menu">
+            Voltar
+        </a>
+
+    </div>
+</div>

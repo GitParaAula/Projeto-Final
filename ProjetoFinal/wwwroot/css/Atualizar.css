@@ -1,0 +1,65 @@
+﻿/* CONTAINER CENTRAL */
+.cadastrar-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+/* CARD */
+.cadastrar-card {
+    background-color: #FFFDFE;
+    width: 500px;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+/* TÍTULO */
+.titulo {
+    color: #00698B;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+/* LISTA DE OPÇÕES */
+.opcoes {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* BOTÕES DE OPÇÃO */
+.btn-opcao {
+    padding: 12px;
+    border: 2px solid #00698B;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #00698B;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+    .btn-opcao:hover {
+        background-color: #00698B;
+        color: #FFFDFE;
+    }
+
+/* BOTÃO VOLTAR */
+.btn-voltar {
+    margin-top: 30px;
+    display: block;
+    width: 100%;
+    background-color: #E1A658;
+    color: #FFFDFE;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s;
+    text-align: center;
+}
+
+    .btn-voltar:hover {
+        background-color: #c68d47;
+    }

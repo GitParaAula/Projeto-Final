@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<link href="~/css/site.css" rel="stylesheet" />
+
+<video autoplay loop muted playsinline class="bg-video">
+    <source src="~/videos/videoplaybackgato2.mp4" type="video/mp4" />
+</video>
+
+<div class="home-container">
+
+    <div class="home-card">
+
+        <h1 class="home-title">Bem-vindo à <span>VitaPet</span>!</h1>
+
+        <p class="home-subtitle">
+            Selecione uma opção abaixo para continuar.
+        </p>
+
+        <div class="home-buttons">
+            <a class="home-btn primary"
+               asp-controller="LoginFunc"
+               asp-action="LoginFunc">
+                Fazer Login
+            </a>
+
+            <a class="home-btn secondary"
+               asp-controller="LoginCliente"
+               asp-action="LoginCliente">
+                Consultar Info do Cliente
+            </a>
+        </div>
+
+    </div>
+
+</div>

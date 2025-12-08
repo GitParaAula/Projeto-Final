@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Cadastro do Cliente";
+}
+
+<link href="~/css/cadastrocliente.css" rel="stylesheet" />
+
+@model ProjetoFinal.Models.Usuario
+
+<main class="content">
+    <div class="container" style="max-width:700px;">
+
+        <h2 class="text-center mb-4">Cadastro de Cliente</h2>
+
+        <form asp-action="Salvar" method="post" class="card-form">
+
+            <h4 class="mb-3">Dados Pessoais</h4>
+
+            <label>Nome</label>
+            <input class="form-control mb-2" asp-for="Nome" required />
+
+            <label>CPF</label>
+            <input class="form-control mb-2" asp-for="Cpf" required />
+
+            <label>Idade</label>
+            <input class="form-control mb-2" asp-for="Idade" type="number" required />
+
+            <label>E-mail</label>
+            <input class="form-control mb-4" asp-for="Email" type="email" required />
+
+
+            <h4 class="mb-3">Endereço</h4>
+
+            <label>Rua</label>
+            <input class="form-control mb-2" asp-for="Endereco.Rua" required />
+
+            <label>Número</label>
+            <input class="form-control mb-2" asp-for="Endereco.Numero" type="number" required />
+
+            <label>Complemento (opcional)</label>
+            <input class="form-control mb-4" asp-for="Endereco.Complemento" />
+
+            <button class="btn btn-primary w-100 mb-3" type="submit">Cadastrar</button>
+
+            <a class="btn btn-secondary w-100" asp-controller="Cadastrar" asp-action="Cadastrar">Voltar</a>
+
+        </form>
+    </div>
+</main>

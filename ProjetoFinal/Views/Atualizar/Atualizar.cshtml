@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Atualizar";
+}
+
+<link href="~/css/atualizar.css" rel="stylesheet" />
+
+<div class="cadastrar-container">
+    <div class="cadastrar-card">
+
+        <h2 class="titulo">O que deseja atualizar?</h2>
+
+        <div class="opcoes">
+            <a class="btn-opcao"
+               asp-controller="ConsultaFuncionario"
+               asp-action="ConsultaFuncionario">
+                Funcionário
+            </a>
+
+            <a class="btn-opcao"
+               asp-controller="GerenciarCliente"
+               asp-action="ConsultaCliente">
+                Cliente
+            </a>
+
+            <a class="btn-opcao"
+               asp-controller="EditarPet"
+               asp-action="Consultar">
+                Pet
+            </a>
+
+            <a class="btn-opcao"
+               asp-controller="EditarPlano"
+               asp-action="ConsultaPlano">
+                Plano
+            </a>
+        </div>
+
+        <a class="btn-voltar"
+           asp-controller="Menu"
+           asp-action="Menu">
+            Voltar
+        </a>
+
+    </div>
+</div>

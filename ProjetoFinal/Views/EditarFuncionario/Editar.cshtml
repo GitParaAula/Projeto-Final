@@ -1,0 +1,46 @@
+﻿@model ProjetoFinal.Models.Funcionario
+
+@{
+    ViewData["Title"] = "Edição de Funcionários";
+}
+
+<link href="~/css/editarfuncionario.css" rel="stylesheet" />
+
+<div class="cadastrar-container">
+
+    <div class="cadastrar-card">
+        <h2 class="titulo text-center mb-4">Editar Funcionário</h2>
+
+        <form asp-action="Editar" method="post">
+
+            <input type="hidden" asp-for="Codigo_funcionario" />
+
+            <div class="form-group mb-3">
+                <label>Nome Completo</label>
+                <input asp-for="Nome" class="form-control" required />
+            </div>
+
+            <div class="form-group mb-3">
+                <label>CPF</label>
+                <input asp-for="Cpf" class="form-control" required />
+            </div>
+
+            <div class="form-group mb-4">
+                <label>RG</label>
+                <input asp-for="Rg" class="form-control" required />
+            </div>
+
+            <button type="submit" class="btn btn-success w-100 mb-3"
+                    onclick="return confirm('Deseja realmente salvar as alterações?');">
+                Confirmar Edição
+            </button>
+
+            <a class="btn btn-voltar"
+               asp-controller="ConsultaFuncionario"
+               asp-action="ConsultaFuncionario">
+                Voltar
+            </a>
+
+        </form>
+    </div>
+</div>

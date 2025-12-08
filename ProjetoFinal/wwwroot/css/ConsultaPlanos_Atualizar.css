@@ -1,0 +1,85 @@
+﻿/* Container central */
+.cadastrar-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+/* Card branco */
+.cadastrar-card {
+    background-color: #FFFDFE;
+    width: 700px;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.15);
+}
+
+/* Título */
+.titulo {
+    color: #00698B;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+/* Barra de pesquisa */
+.search-box input {
+    border-radius: 6px;
+    padding: 10px;
+}
+
+.search-box .btn-primary {
+    background-color: #00698B;
+    border: none;
+}
+
+    .search-box .btn-primary:hover {
+        background-color: #00526e;
+    }
+
+/* Tabela */
+.table-responsive {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table-primary-custom {
+    background-color: #00698B;
+    color: white;
+    font-weight: bold;
+}
+
+table th, table td {
+    vertical-align: middle;
+}
+
+/* Botão voltar */
+.btn-voltar {
+    display: block;
+    width: 100%;
+    background-color: #E1A658;
+    color: #FFFDFE;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: 0.2s;
+    border: none;
+}
+
+    .btn-voltar:hover {
+        background-color: #c68d47;
+    }
+
+/* Botão de editar */
+.btn-warning {
+    background-color: #ffc107;
+    color: #212529;
+    border: none;
+    padding: 5px 10px;
+    font-size: 0.85rem;
+}
+
+    .btn-warning:hover {
+        background-color: #e0a800;
+    }

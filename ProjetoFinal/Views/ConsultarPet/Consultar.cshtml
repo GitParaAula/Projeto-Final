@@ -1,0 +1,55 @@
+﻿@model List<ProjetoFinal.Repositorio.PetConsultaViewModel>
+
+@{
+    ViewData["Title"] = "Consulta de Pets";
+}
+
+<link href="~/css/consultapets.css" rel="stylesheet" />
+
+<div class="container-consulta">
+
+    <h2 class="text-center mb-4">Consulta de Pets</h2>
+
+    <!-- CAMPO DE BUSCA -->
+    <form method="get" asp-controller="ConsultarPet" asp-action="Consultar" class="search-box mb-4 d-flex gap-2">
+        <input type="text" name="nome" class="form-control" placeholder="Digite o nome do pet" />
+        <button type="submit" class="btn btn-primary">Buscar</button>
+    </form>
+
+    <!-- TABELA -->
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead class="table-primary-custom">
+                <tr>
+                    <th>Nome</th>
+                    <th>Raça</th>
+                    <th>Tipo</th>
+                    <th>Idade</th>
+                    <th>Plano</th>
+                    <th>Dono</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var p in Model)
+                {
+                    <tr>
+                        <td>@p.NomePet</td>
+                        <td>@p.Raca</td>
+                        <td>@p.Tipo</td>
+                        <td>@p.Idade</td>
+                        <td>@p.NomePlano</td>
+                        <td>@p.NomeDono</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <a class="btn btn-secondary w-100 mt-3"
+       asp-controller="Consultar"
+       asp-action="Consultar">
+        Voltar
+    </a>
+
+</div>

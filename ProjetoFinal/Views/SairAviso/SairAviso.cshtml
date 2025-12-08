@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Sair";
+}
+
+<link href="~/../../../../área de trabalho/projetofinal/projetofinal/wwwroot/css/sairaviso.css" rel="stylesheet" />
+
+<div class="container mt-5" style="max-width: 500px;">
+
+    <div class="border rounded p-4 text-center">
+
+        <h4 class="mb-4">Tem certeza que deseja sair?</h4>
+
+        <div class="d-grid gap-3">
+
+            <a class="btn btn-primary w-100"
+               asp-controller="Home"
+               asp-action="Index">
+                Sair
+            </a>
+
+            <a class="btn btn-secondary w-100"
+               asp-controller="Menu"
+               asp-action="Menu">
+               Cancelar
+            </a>
+
+        </div>
+
+    </div>
+
+</div>

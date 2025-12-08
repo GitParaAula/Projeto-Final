@@ -1,0 +1,70 @@
+﻿/* Fundo padrão */
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+/* Container principal da página */
+.container-consulta {
+    width: 65%;
+    margin: 80px auto 100px auto;
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Título */
+h2 {
+    font-weight: bold;
+    color: #00698B;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Barra de pesquisa */
+.search-box input {
+    border-radius: 6px;
+    padding: 10px;
+}
+
+.search-box .btn-primary {
+    background-color: #00698B;
+    border: none;
+}
+
+    .search-box .btn-primary:hover {
+        background-color: #00526e;
+    }
+
+/* Tabela */
+.table-responsive {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table-primary-custom {
+    background-color: #00698B;
+    color: white;
+    font-weight: bold;
+}
+
+table th,
+table td {
+    vertical-align: middle;
+}
+
+/* Botão voltar */
+.btn-secondary {
+    background-color: #E1A658;
+    border: none;
+}
+
+    .btn-secondary:hover {
+        background-color: #c68f4c;
+    }
+
+/* Margem antes do footer */
+footer {
+    margin-top: 60px;
+}

@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Menu do Funcionário";
+}
+
+<link href="~/css/menu.css" rel="stylesheet" />
+
+<nav class="custom-navbar">
+    <div class="nav-container">
+
+        <span class="nav-title">Sistema do Funcionário</span>
+
+        <ul class="nav-links">
+
+            <li><a asp-controller="Cadastrar" asp-action="Cadastrar">Cadastrar</a></li>
+            <li><a asp-controller="Consultar" asp-action="Consultar">Consultar</a></li>
+            <li><a asp-controller="Gerenciar" asp-action="Gerenciar">Gerenciar</a></li>
+            <li><a asp-controller="Atualizar" asp-action="Atualizar">Atualizar</a></li>
+            <li><a asp-controller="Excluir" asp-action="Excluir">Excluir</a></li>
+
+        </ul>
+
+        <a class="btn-exit"
+           asp-controller="SairAviso"
+           asp-action="SairAviso">
+            Sair
+        </a>
+
+    </div>
+</nav>
+
+<div class="welcome-container">
+    <div class="welcome-card">
+        <h2>Bem-vindo ao Menu!</h2>
+    </div>
+</div>
+
+<!-- LOGO CENTRAL -->
+<div class="logo-container">
+    <img src="~/images/logoc.png" alt="Logo do Sistema" class="logo" />
+</div>
+

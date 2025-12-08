@@ -1,0 +1,59 @@
+﻿@model ProjetoFinal.Models.ClienteComPetsViewModel
+
+<link href="~/css/logincliente.css" rel="stylesheet" />
+
+<div class="container mt-5" style="max-width: 800px;">
+    <h2 class="text-center mb-4">Dados do Cliente</h2>
+
+    <table class="table table-bordered table-striped">
+        <tr><th>Código</th><td>@Model.Cliente.Codigo_Usuario</td></tr>
+        <tr><th>Nome</th><td>@Model.Cliente.Nome</td></tr>
+        <tr><th>CPF</th><td>@Model.Cliente.Cpf</td></tr>
+        <tr><th>Idade</th><td>@Model.Cliente.Idade</td></tr>
+        <tr><th>Email</th><td>@Model.Cliente.Email</td></tr>
+        <tr><th>Rua</th><td>@Model.Cliente.Endereco.Rua</td></tr>
+        <tr><th>Número</th><td>@Model.Cliente.Endereco.Numero</td></tr>
+        <tr><th>Complemento</th><td>@Model.Cliente.Endereco.Complemento</td></tr>
+    </table>
+
+    <h3 class="mt-5 mb-3">Pets e Planos</h3>
+    <table class="table table-bordered table-striped">
+        <thead class="table-secundary">
+            <tr>
+                <th>Código Pet</th>
+                <th>Nome</th>
+                <th>Tipo</th>
+                <th>Raça</th>
+                <th>Idade</th>
+                <th>Porte</th>
+                <th>Código Plano</th>
+                <th>Nome Plano</th>
+                <th>Valor</th>
+                <th>Duração</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model.Pets)
+            {
+                <tr>
+                    <td>@p.Codigo_Pet</td>
+                    <td>@p.NomePet</td>
+                    <td>@p.Tipo</td>
+                    <td>@p.Raca</td>
+                    <td>@p.Idade</td>
+                    <td>@p.Porte</td>
+                    <td>@p.Codigo_Plano</td>
+                    <td>@p.NomePlano</td>
+                    <td>@p.Valor.ToString("C")</td>
+                    <td>@p.Duracao.ToShortDateString()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a asp-controller="ClienteLoginConsulta"
+       asp-action="LoginCliente"
+       class="btn btn-secondary w-100 mt-3 mb-5">
+        Voltar
+    </a>
+</div>

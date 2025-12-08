@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Cadastro de Funcionário";
+}
+
+<link href="~/css/cadastrofunc3.css" rel="stylesheet" />
+
+<div class="cadastro-container">
+
+    <div class="cadastro-card">
+
+        <h2 class="titulo">Cadastro de Funcionário</h2>
+
+        <form asp-action="CadastroFunc3" method="post">
+
+            <label for="Nome">Nome Completo</label>
+            <input type="text" id="Nome" name="Nome" placeholder="Digite o nome completo" required />
+
+            <label for="Cpf">CPF</label>
+            <input type="text" id="Cpf" name="Cpf" placeholder="Digite o CPF" required />
+
+            <label for="Rg">RG</label>
+            <input type="text" id="Rg" name="Rg" placeholder="Digite o RG" required />
+
+            <button type="submit" class="btn-confirmar">Confirmar Cadastro</button>
+
+            <a class="btn-voltar"
+               asp-controller="Cadastrar"
+               asp-action="Cadastrar">
+                Voltar
+            </a>
+
+        </form>
+
+    </div>
+
+</div>

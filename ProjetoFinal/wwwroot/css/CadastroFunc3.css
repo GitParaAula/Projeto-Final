@@ -1,0 +1,82 @@
+﻿/* CONTAINER CENTRAL */
+.cadastro-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+/* CARD */
+.cadastro-card {
+    background-color: #FFFDFE;
+    width: 500px;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.15);
+}
+
+/* TÍTULO */
+.titulo {
+    text-align: center;
+    color: #00698B;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+/* LABELS */
+.cadastro-card label {
+    font-weight: 600;
+    margin-top: 12px;
+    color: #00698B;
+}
+
+/* INPUTS */
+.cadastro-card input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #00698B;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    outline: none;
+    transition: 0.2s;
+}
+
+    .cadastro-card input:focus {
+        border-color: #E1A658;
+    }
+
+/* BOTÃO CONFIRMAR */
+.btn-confirmar {
+    width: 100%;
+    background-color: #00698B;
+    color: #FFFDFE;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.2s;
+}
+
+    .btn-confirmar:hover {
+        background-color: #005575;
+    }
+
+/* BOTÃO VOLTAR */
+.btn-voltar {
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+    background-color: #E1A658;
+    color: #FFFDFE;
+    padding: 12px;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+    .btn-voltar:hover {
+        background-color: #c68d47;
+    }

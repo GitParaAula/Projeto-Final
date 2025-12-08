@@ -1,0 +1,57 @@
+﻿@model ProjetoFinal.Models.Usuario
+
+@{
+    ViewData["Title"] = "Edição de Clientes";
+}
+
+<link href="~/css/editarcliente.css" rel="stylesheet" />
+
+<div class="cadastrar-container">
+
+    <div class="cadastrar-card">
+        <h2 class="titulo text-center mb-4">Editar Cliente</h2>
+
+        <form asp-action="Editar" method="post">
+
+            <input type="hidden" asp-for="Codigo_Usuario" />
+            <input type="hidden" asp-for="Endereco.Codigo_Endereco" />
+
+            <h4>Dados Pessoais</h4>
+
+            <label>Nome</label>
+            <input class="form-control mb-2" asp-for="Nome" required />
+
+            <label>CPF</label>
+            <input class="form-control mb-2" asp-for="Cpf" required />
+
+            <label>Idade</label>
+            <input class="form-control mb-2" asp-for="Idade" type="number" required />
+
+            <label>Email</label>
+            <input class="form-control mb-3" asp-for="Email" type="email" required />
+
+            <h4>Endereço</h4>
+
+            <label>Rua</label>
+            <input class="form-control mb-2" asp-for="Endereco.Rua" required />
+
+            <label>Número</label>
+            <input class="form-control mb-2" asp-for="Endereco.Numero" type="number" required />
+
+            <label>Complemento</label>
+            <input class="form-control mb-3" asp-for="Endereco.Complemento" />
+
+            <button class="btn btn-success w-100 mb-3"
+                    onclick="return confirm('Deseja realmente salvar as alterações?');">
+                Confirmar Edição
+            </button>
+
+            <a class="btn btn-voltar"
+               asp-controller="GerenciarCliente"
+               asp-action="ConsultaCliente">
+                Voltar
+            </a>
+
+        </form>
+    </div>
+</div>

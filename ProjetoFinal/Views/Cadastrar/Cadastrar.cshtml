@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Cadastrar";
+}
+
+<link href="~/css/cadastrar.css" rel="stylesheet" />
+
+<div class="cadastrar-container">
+
+    <div class="cadastrar-card">
+
+        <h2 class="titulo">O que deseja cadastrar?</h2>
+
+        <div class="opcoes">
+
+            <a class="btn-opcao"
+               asp-controller="CadastroFunc3"
+               asp-action="CadastroFunc3">
+                Funcionário
+            </a>
+
+            <a class="btn-opcao"
+               asp-controller="CadastroCliente"
+               asp-action="CadastroCliente">
+                Cliente
+            </a>
+
+            <a class="btn-opcao"
+               asp-controller="CadastroPet"
+               asp-action="CadastroPet">
+                Pet
+            </a>
+
+            <a class="btn-opcao"
+               asp-controller="CadastroPlano"
+               asp-action="CadastroPlano">
+                Plano
+            </a>
+
+        </div>
+
+        <a class="btn-voltar"
+           asp-controller="Menu"
+           asp-action="Menu">
+            Voltar
+        </a>
+
+    </div>
+
+</div>

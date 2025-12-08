@@ -1,0 +1,94 @@
+﻿/* ===== PALETA ===== */
+:root {
+    --azul: #00698B;
+    --branco: #FFFDFE;
+    --marrom: #E1A658;
+}
+
+/* ===== ESTRUTURA ===== */
+body {
+    background: var(--branco);
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.aviso-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 70px 20px;
+}
+
+.aviso-card {
+    background: var(--branco);
+    max-width: 550px;
+    width: 100%;
+    padding: 40px 45px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== TÍTULOS E TEXTOS ===== */
+.aviso-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--azul);
+    margin-bottom: 15px;
+}
+
+.aviso-text {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.aviso-info {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* ===== BOTÕES ===== */
+.btn-primary-vp,
+.btn-secondary-vp {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    text-align: center;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s ease;
+    margin: 0 auto 15px auto;
+}
+
+/* Botão maior */
+.large {
+    width: 75%;
+}
+
+/* Botão menor */
+.small {
+    width: 50%;
+}
+
+/* Botão primário */
+.btn-primary-vp {
+    background: var(--azul);
+    color: var(--branco);
+}
+
+    .btn-primary-vp:hover {
+        background: #00506b;
+    }
+
+/* Botão secundário */
+.btn-secondary-vp {
+    background: var(--marrom);
+    color: #333;
+}
+
+    .btn-secondary-vp:hover {
+        background: #cf914d;
+    }

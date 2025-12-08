@@ -1,0 +1,26 @@
+﻿@model ProjetoFinal.Models.Pagamento
+
+@{
+    ViewData["Title"] = "Confirmar Pagamento";
+}
+
+<div class="container mt-5" style="max-width: 600px;">
+    <h2 class="text-center mb-4">Confirme o Pagamento</h2>
+
+    <p class="text-center mb-4">
+        O cliente efetuou o pagamento corretamente?
+    </p>
+
+    <div class="d-flex flex-column gap-3">
+        <!-- Botão Confirmar -->
+        <form asp-controller="AtribuirPlano" asp-action="AtribuirPlano" method="post">
+            <input type="hidden" asp-for="Codigo_Pagamento" />
+            <button type="submit" class="btn btn-success w-100">Confirmar Pagamento</button>
+        </form>
+
+        <!-- Botão Voltar -->
+        <a asp-controller="Pagamento" asp-action="Cadastrar" class="btn btn-secondary w-100">
+            Voltar
+        </a>
+    </div>
+</div>

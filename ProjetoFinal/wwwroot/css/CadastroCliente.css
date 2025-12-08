@@ -1,0 +1,152 @@
+﻿/* ================================
+   CADASTRO CLIENTE - LAYOUT PADRÃO
+   ================================ */
+
+/* --- Força a página a ocupar toda altura e empurrar o footer --- */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #FFFDFE; /* branco da paleta */
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #1a1a1a;
+}
+
+/* Main (conteúdo que cresce) */
+main.content {
+    flex: 1 0 auto; /* ocupa o espaço disponível e empurra o footer */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* começa no topo do container */
+    padding: 40px 16px 24px; /* garante respiro por cima e laterais */
+}
+
+/* Container central (largura controlada) */
+.container {
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 12px;
+}
+
+/* Card do formulário (visual igual aos outros) */
+.card-form {
+    background: #fff;
+    border-radius: 12px;
+    padding: 26px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Títulos */
+h2 {
+    text-align: center;
+    color: #00698B; /* azul */
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+h4 {
+    color: #00698B;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Labels & inputs */
+label {
+    display: block;
+    margin-bottom: 6px;
+    color: #00698B;
+    font-weight: 600;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 2px solid rgba(0,0,0,0.08);
+    margin-bottom: 12px;
+    box-sizing: border-box;
+    transition: border-color .18s, box-shadow .18s;
+}
+
+    .form-control:focus {
+        border-color: #00698B;
+        box-shadow: 0 0 0 6px rgba(0,105,139,0.06);
+        outline: none;
+    }
+
+/* Botões (padrão do projeto) */
+.btn {
+    display: inline-block;
+    text-align: center;
+    font-weight: 700;
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    box-sizing: border-box;
+}
+
+    .btn.btn-primary {
+        background-color: #00698B;
+        color: #FFFDFE;
+    }
+
+        .btn.btn-primary:hover {
+            background-color: #005575;
+        }
+
+    .btn.btn-secondary {
+        background-color: #E1A658;
+        color: #FFFDFE;
+        text-decoration: none;
+        display: block;
+    }
+
+        .btn.btn-secondary:hover {
+            background-color: #c68d47;
+        }
+
+/* espaçamento extra abaixo do formulário para garantir respiro se o footer for alto */
+.card-form {
+    padding-bottom: 36px;
+}
+
+/* --- Protege contra footers com position fixed/absolute vindos de outro css --- */
+footer,
+.site-footer,
+.footer {
+    position: relative !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+    z-index: 1 !important;
+    background-clip: padding-box;
+}
+
+/* Se o seu footer for fixed por design e você quiser mantê-lo fixo,
+   habilite a seção abaixo para adicionar um espaçamento extra no final do main:
+   main.content { padding-bottom: 120px; }
+*/
+
+/* --- Responsivo: manter boa largura em telas pequenas --- */
+@media (max-width: 768px) {
+    .container {
+        max-width: 95%;
+        padding: 0 8px;
+    }
+
+    .card-form {
+        padding: 20px;
+    }
+}

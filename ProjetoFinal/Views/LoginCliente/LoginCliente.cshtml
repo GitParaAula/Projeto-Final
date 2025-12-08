@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Login do Cliente";
+}
+
+<link href="~/css/logincliente.css" rel="stylesheet" />
+
+<div class="login-container">
+
+    <div class="login-card">
+
+        <h2 class="login-title">Consultar Info do Cliente</h2>
+
+        @if (TempData["Erro"] != null)
+        {
+            <div class="alert-erro">
+                @TempData["Erro"]
+            </div>
+        }
+
+        <form method="post">
+
+            <div class="form-group">
+                <label for="Usuario">Nome ou Email</label>
+                <input type="text" id="Usuario" name="Usuario"
+                       placeholder="Digite seu nome ou email" required />
+            </div>
+
+            <div class="form-group">
+                <label for="Senha">Senha</label>
+                <input type="password" id="Senha" name="Senha"
+                       placeholder="Digite sua senha" required />
+            </div>
+
+            <div class="link-cadastro">
+                <a asp-controller="InterCadastroCliente"
+                   asp-action="InterCadastroCliente">
+                    Não possui cadastro? Clique aqui.
+                </a>
+            </div>
+
+            <button type="submit" class="btn-primary-vp"
+                    asp-controller="ClienteLoginConsulta"
+                    asp-action="LoginCliente">
+                Consultar
+            </button>
+
+            <a class="btn-secondary-vp"
+               asp-controller="Home"
+               asp-action="Index">
+                Voltar
+            </a>
+
+        </form>
+    </div>
+</div>

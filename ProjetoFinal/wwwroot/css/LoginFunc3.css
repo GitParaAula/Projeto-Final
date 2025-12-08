@@ -1,0 +1,81 @@
+﻿/* Fundo e alinhamento */
+.custom-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+/* Cartão */
+.custom-card {
+    background-color: #FFFDFE;
+    width: 420px;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Título */
+.title {
+    text-align: center;
+    color: #00698B;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+/* Labels */
+label {
+    font-weight: 600;
+    color: #00698B;
+}
+
+/* Inputs */
+.form-input {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 18px;
+    padding: 10px 12px;
+    border: 1px solid #cfcfcf;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+    .form-input:focus {
+        border-color: #00698B;
+        box-shadow: 0 0 4px rgba(0, 105, 139, 0.35);
+    }
+
+/* Botão principal */
+.btn-primary {
+    width: 100%;
+    background-color: #00698B;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 12px;
+    transition: 0.2s;
+}
+
+    .btn-primary:hover {
+        background-color: #005779;
+    }
+
+/* Botão secundário */
+.btn-secondary {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #E1A658;
+    color: #FFFDFE;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+    .btn-secondary:hover {
+        background-color: #c68d47;
+    }

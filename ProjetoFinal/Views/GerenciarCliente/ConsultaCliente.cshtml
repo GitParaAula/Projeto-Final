@@ -1,0 +1,67 @@
+﻿@model List<ProjetoFinal.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Consulta de Clientes";
+}
+
+<link href="~/css/consultacliente.css" rel="stylesheet" />
+
+<div class="container-consulta">
+
+    <h2>Clientes Registrados</h2>
+
+    <!-- CAMPO DE BUSCA -->
+    <form method="get" asp-action="ConsultaCliente" class="search-box mb-4">
+        <div class="input-group">
+            <input type="text" name="nome" class="form-control" placeholder="Pesquisar por nome..." />
+            <button type="submit" class="btn btn-primary">Buscar</button>
+        </div>
+    </form>
+
+    <!-- TABELA -->
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead class="table-primary-custom">
+                <tr>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Idade</th>
+                    <th>Email</th>
+                    <th>Endereço</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var u in Model)
+                {
+                    <tr>
+                        <td>@u.Nome</td>
+                        <td>@u.Cpf</td>
+                        <td>@u.Idade</td>
+                        <td>@u.Email</td>
+                        <td>
+                            Rua: @u.Endereco?.Rua <br />
+                            Nº: @u.Endereco?.Numero <br />
+                            Comp: @u.Endereco?.Complemento
+                        </td>
+                        <td>
+                            <a class="btn btn-warning btn-sm"
+                               asp-controller="GerenciarCliente"
+                               asp-action="Editar"
+                               asp-route-id="@u.Codigo_Usuario">
+                                Editar
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <a class="btn btn-secondary w-100 mt-4 mb-5"
+       asp-controller="Atualizar"
+       asp-action="Atualizar">
+        Voltar
+    </a>
+
+</div>

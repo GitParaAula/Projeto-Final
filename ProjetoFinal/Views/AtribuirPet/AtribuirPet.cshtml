@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Atribuir Pet ao Dono";
+}
+
+<link href="~/css/atribuirpet.css" rel="stylesheet" />
+
+<div class="cadastrar-container">
+    <div class="cadastrar-card">
+
+        <h2 class="titulo">Atribuir Pet ao Dono</h2>
+
+        @if (TempData["Mensagem"] != null)
+        {
+            <div class="alert @TempData["MensagemClasse"] text-center">
+                @TempData["Mensagem"]
+            </div>
+        }
+
+        <form method="post">
+
+            <div class="mb-3">
+                <label class="form-label">Código do Pet</label>
+                <input type="number" class="form-control" name="codigoPet" required />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Código do Dono</label>
+                <input type="number" class="form-control" name="codigoUsuario" required />
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 mb-2">Atribuir</button>
+
+            <a asp-controller="Gerenciar" asp-action="Gerenciar" class="btn-voltar">
+                Voltar
+            </a>
+
+        </form>
+    </div>
+</div>
