@@ -22,7 +22,7 @@ namespace ProjetoFinal.Controllers
         public IActionResult Salvar(Usuario usuario)
         {
             _repo.CadastrarCliente(usuario);
-            return RedirectToAction("AvisoCadastro", "AvisoCadastro");
+            return RedirectToAction("ConfirmarCliente", "HistoricoCadastroCliente");
         }
         [HttpGet]
         public IActionResult CadastroCliente()
