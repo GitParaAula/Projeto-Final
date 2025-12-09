@@ -23,7 +23,7 @@ namespace ProjetoFinal.Controllers
         public IActionResult Salvar(Plano plano)
         {
             _repo.CadastrarPlano(plano);
-            return RedirectToAction("AvisoCadastroPlano", "AvisoCadastroPlano");
+            return RedirectToAction("ConfirmarFuncionarioPlano", "HistoricoCadastroPlano");
         }
     }
 }
