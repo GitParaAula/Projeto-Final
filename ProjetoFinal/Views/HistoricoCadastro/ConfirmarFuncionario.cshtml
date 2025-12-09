@@ -1,0 +1,22 @@
+﻿@model ProjetoFinal.Models.HistoricoCadastro
+
+@{
+    ViewData["Title"] = "Confirmar Funcionário";
+}
+
+<div class="container mt-5">
+
+    <h2 class="text-center mb-4">Confirmar Funcionário do Cadastro</h2>
+
+    <form asp-controller="HistoricoCadastro" asp-action="Registrar" method="post">
+
+        <div class="mb-3">
+            <label for="Codigo_Funcionario" class="form-label">Código do Funcionário:</label>
+            <input type="number" class="form-control" id="Codigo_Funcionario" name="Codigo_Funcionario" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Confirmar</button>
+
+    </form>
+
+</div>

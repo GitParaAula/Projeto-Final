@@ -29,7 +29,7 @@ namespace ProjetoFinal.Controllers
             if (ModelState.IsValid)
             {
                 _CadastroFuncRepositorio.CadastrarFunc(funcionario);
-                return RedirectToAction("Aviso", "Aviso");
+                return RedirectToAction("ConfirmarFuncionario" , "HistoricoCadastro");
             }
 
             return View(funcionario);
