@@ -22,7 +22,7 @@ namespace ProjetoFinal.Controllers
         public IActionResult Salvar(Pet pet)
         {
             _repo.CadastrarPet(pet);
-            return RedirectToAction("AvisoCadastroPet", "AvisoCadastroPet");
+            return RedirectToAction("ConfirmarFuncionarioPet", "HistoricoCadastroPet");
         }
     }
 }
