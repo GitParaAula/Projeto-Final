@@ -1,0 +1,66 @@
+﻿:root {
+    --azul: #00698B;
+    --branco: #FFFDFE;
+    --marrom: #E1A658;
+}
+
+/* Container centralizado */
+.container-confirm-plano {
+    max-width: 500px;
+    margin: 80px auto;
+    padding: 35px 40px;
+    background: var(--branco);
+    border-radius: 15px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    text-align: center;
+}
+
+/* Título */
+.container-confirm-plano h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--azul);
+    margin-bottom: 30px;
+}
+
+/* Labels */
+.container-confirm-plano label {
+    display: block;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+/* Inputs */
+.container-confirm-plano input.form-control {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.container-confirm-plano input.form-control:focus {
+    border-color: var(--azul);
+    box-shadow: 0 0 5px rgba(0,105,139,0.3);
+    outline: none;
+}
+
+/* Botão */
+.container-confirm-plano .btn-confirm-plano {
+    background-color: var(--azul);
+    color: var(--branco);
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 10px;
+    font-weight: 600;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.container-confirm-plano .btn-confirm-plano:hover {
+    background-color: #00526e;
+    cursor: pointer;
+}

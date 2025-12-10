@@ -4,18 +4,21 @@
     ViewData["Title"] = "Confirmar Funcionário - Cadastro de Pet";
 }
 
-<div class="container mt-5">
+<!-- Link do CSS individual da página -->
+<link href="@Url.Content("~/css/HistoricoConfPet.css")" rel="stylesheet" />
 
-    <h2 class="text-center mb-4">Confirmar Funcionário para Cadastro do Pet</h2>
+<div class="container-confirm-pet">
+
+    <h2>Confirmar Funcionário para Cadastro do Pet</h2>
 
     <form asp-controller="HistoricoCadastroPet" asp-action="RegistrarPet" method="post">
 
-        <div class="mb-3">
-            <label for="Codigo_Funcionario" class="form-label">Código do Funcionário:</label>
-            <input type="number" class="form-control" id="Codigo_Funcionario" name="Codigo_Funcionario" required />
+        <div class="form-group">
+            <label for="Codigo_Funcionario">Código do Funcionário:</label>
+            <input type="number" id="Codigo_Funcionario" name="Codigo_Funcionario" class="form-control" required />
         </div>
 
-        <button type="submit" class="btn btn-primary">Confirmar</button>
+        <button type="submit" class="btn-confirm-pet">Confirmar</button>
 
     </form>
 

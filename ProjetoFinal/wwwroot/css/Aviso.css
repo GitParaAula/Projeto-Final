@@ -79,9 +79,9 @@ body {
     color: var(--branco);
 }
 
-    .btn-primary-vp:hover {
-        background: #00506b;
-    }
+.btn-primary-vp:hover {
+    background: #00506b;
+}
 
 /* Botão secundário */
 .btn-secondary-vp {
@@ -89,6 +89,6 @@ body {
     color: #333;
 }
 
-    .btn-secondary-vp:hover {
-        background: #cf914d;
-    }
+.btn-secondary-vp:hover {
+background: #cf914d;
+}

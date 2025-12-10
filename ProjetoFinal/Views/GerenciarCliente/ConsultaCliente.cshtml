@@ -1,56 +1,46 @@
 ﻿@model List<ProjetoFinal.Models.Usuario>
 
 @{
-    ViewData["Title"] = "Consulta de Clientes";
+    ViewData["Title"] = "Atualizar Clientes";
 }
 
-<link href="~/css/consultacliente.css" rel="stylesheet" />
+<link href="@Url.Content("~/css/atualizarcliente.css")" rel="stylesheet" />
 
-<div class="container-consulta">
+<div class="consulta-container">
 
-    <h2>Clientes Registrados</h2>
+    <!-- TÍTULO -->
+    <h2 class="consulta-titulo">Atualizar Clientes</h2>
 
     <!-- CAMPO DE BUSCA -->
-    <form method="get" asp-action="ConsultaCliente" class="search-box mb-4">
-        <div class="input-group">
-            <input type="text" name="nome" class="form-control" placeholder="Pesquisar por nome..." />
-            <button type="submit" class="btn btn-primary">Buscar</button>
-        </div>
+    <form method="get" asp-controller="ConsultaCliente" asp-action="ConsultaCliente" class="consulta-form">
+        <input type="text" name="nome" placeholder="Digite o nome do cliente" />
+        <button type="submit">Buscar</button>
     </form>
 
-    <!-- TABELA -->
-    <div class="table-responsive">
-        <table class="table table-bordered">
-            <thead class="table-primary-custom">
+    <!-- TABELA DE CLIENTES -->
+    <div class="table-container">
+        <table class="table-custom">
+            <thead>
                 <tr>
                     <th>Nome</th>
                     <th>CPF</th>
                     <th>Idade</th>
                     <th>Email</th>
                     <th>Endereço</th>
-                    <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach (var u in Model)
+                @foreach (var c in Model)
                 {
                     <tr>
-                        <td>@u.Nome</td>
-                        <td>@u.Cpf</td>
-                        <td>@u.Idade</td>
-                        <td>@u.Email</td>
+                        <td>@c.Nome</td>
+                        <td>@c.Cpf</td>
+                        <td>@c.Idade</td>
+                        <td>@c.Email</td>
                         <td>
-                            Rua: @u.Endereco?.Rua <br />
-                            Nº: @u.Endereco?.Numero <br />
-                            Comp: @u.Endereco?.Complemento
-                        </td>
-                        <td>
-                            <a class="btn btn-warning btn-sm"
-                               asp-controller="GerenciarCliente"
-                               asp-action="Editar"
-                               asp-route-id="@u.Codigo_Usuario">
-                                Editar
-                            </a>
+                            Rua: @c.Endereco?.Rua <br />
+                            Nº: @c.Endereco?.Numero <br />
+                            Comp: @c.Endereco?.Complemento
                         </td>
                     </tr>
                 }
@@ -58,10 +48,7 @@
         </table>
     </div>
 
-    <a class="btn btn-secondary w-100 mt-4 mb-5"
-       asp-controller="Atualizar"
-       asp-action="Atualizar">
-        Voltar
-    </a>
+    <!-- BOTÃO VOLTAR -->
+    <a asp-controller="Atualizar" asp-action="Atualizar" class="btn-voltar">Voltar</a>
 
 </div>

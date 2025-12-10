@@ -38,19 +38,27 @@ h2 {
     border: none;
 }
 
-    .search-box .btn-primary:hover {
-        background-color: #00526e;
-    }
+.search-box .btn-primary:hover {
+    background-color: #00526e;
+}
 
 /* Botão voltar */
 .btn-secondary {
+    display: block;
+    width: 100%;
+    text-align: center;
     background-color: #E1A658;
-    border: none;
+    color: #FFFDFE;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    text-decoration: none;
+    transition: 0.2s;
 }
 
-    .btn-secondary:hover {
-        background-color: #c68f4c;
-    }
+.btn-secondary:hover {
+    background-color: #c68d47;
+}
 
 /* Espaço antes do footer */
 footer {

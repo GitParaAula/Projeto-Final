@@ -36,9 +36,9 @@
     border: none;
 }
 
-    .btn-voltar:hover {
-        background-color: #c68d47;
-    }
+.btn-voltar:hover {
+    background-color: #c68d47;
+}
 
 /* Tabela responsiva */
 .table-responsive {

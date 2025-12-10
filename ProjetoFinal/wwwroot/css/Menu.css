@@ -27,7 +27,7 @@
 
 .nav-title {
     color: #FFFDFE;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 700;
 }
 
@@ -39,17 +39,17 @@
     padding: 0;
 }
 
-    .nav-links li a {
-        color: #FFFDFE;
-        font-size: 16px;
-        text-decoration: none;
-        padding: 6px 0;
-        transition: 0.2s;
-    }
+.nav-links li a {
+    color: #FFFDFE;
+    font-size: 22px;
+    text-decoration: none;
+    padding: 6px 0;
+    transition: 0.2s;
+}
 
-        .nav-links li a:hover {
-            color: #E1A658;
-        }
+.nav-links li a:hover {
+    color: #E1A658;
+}
 
 /* BOTÃO "SAIR" */
 .btn-exit {
@@ -60,11 +60,12 @@
     text-decoration: none;
     font-weight: 600;
     transition: 0.2s;
+    font-size: 22px;
 }
 
-    .btn-exit:hover {
-        background-color: #c68d47;
-    }
+.btn-exit:hover {
+    background-color: #c68d47;
+}
 
 /* CARD CENTRAL */
 .welcome-container {
@@ -82,7 +83,7 @@
     box-shadow: 0 0 12px rgba(0,0,0,0.15);
 }
 
-    .welcome-card h2 {
-        color: #00698B;
-        font-weight: 700;
-    }
+.welcome-card h2 {
+    color: #00698B;
+    font-weight: 700;
+}

@@ -176,3 +176,5 @@ BEGIN
     SELECT hp.Codigo_HistoricoPagamento, p.Titular, p.Valor, p.MetodoPagamento FROM tbHistoricoPagamento hp
 		INNER JOIN tbPagamento p ON hp.Codigo_Pagamento = p.Codigo_Pagamento;
 END $$
+
+select * from tbFuncionario;

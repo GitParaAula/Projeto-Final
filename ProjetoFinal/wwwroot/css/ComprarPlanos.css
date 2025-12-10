@@ -1,0 +1,123 @@
+﻿:root {
+    --azul: #00698B;
+    --branco: #FFFDFE;
+    --marrom: #E1A658;
+}
+
+/* Container centralizado */
+.comprar-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+/* Card branco com sombra */
+.comprar-card {
+    background-color: var(--branco);
+    width: 700px;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.15);
+}
+
+/* Título */
+.comprar-titulo {
+    color: var(--azul);
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* Formulário de pesquisa */
+.comprar-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.comprar-form input[type="text"] {
+    flex: 1;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.comprar-form button {
+    padding: 10px 20px;
+    background-color: var(--azul);
+    color: var(--branco);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.comprar-form button:hover {
+    background-color: #00506B;
+}
+
+/* Tabela */
+.comprar-tabela {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.comprar-tabela th,
+.comprar-tabela td {
+    padding: 10px 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.comprar-tabela th {
+    background-color: var(--azul);
+    color: var(--branco);
+    font-weight: 600;
+}
+
+.comprar-tabela tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.comprar-tabela tr:hover {
+    background-color: #e3f0f5;
+}
+
+/* Botão de ação (Comprar) */
+.btn-comprar {
+    background-color: #28a745;
+    border: none;
+    padding: 10px 15px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+    color: var(--branco) !important;
+}
+
+.btn-comprar:hover {
+    background-color: #218838;
+}
+
+/* Botão de voltar */
+.btn-voltar {
+    display: block;
+    width: 100%;
+    background-color: var(--marrom);
+    color: var(--branco);
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: 0.2s;
+    border: none;
+    margin-top: 15px;
+}
+
+.btn-voltar:hover {
+    background-color: #c68d47;
+}

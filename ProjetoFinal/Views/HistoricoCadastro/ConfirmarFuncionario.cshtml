@@ -4,18 +4,20 @@
     ViewData["Title"] = "Confirmar Funcionário";
 }
 
-<div class="container mt-5">
+<link href="@Url.Content("~/css/HistoricoCadastro.css")" rel="stylesheet" />
 
-    <h2 class="text-center mb-4">Confirmar Funcionário do Cadastro</h2>
+<div class="container-confirm">
+
+    <h2>Confirmar Funcionário do Cadastro</h2>
 
     <form asp-controller="HistoricoCadastro" asp-action="Registrar" method="post">
 
-        <div class="mb-3">
-            <label for="Codigo_Funcionario" class="form-label">Código do Funcionário:</label>
-            <input type="number" class="form-control" id="Codigo_Funcionario" name="Codigo_Funcionario" required />
+        <div class="form-group">
+            <label for="Codigo_Funcionario">Código do Funcionário:</label>
+            <input type="number" id="Codigo_Funcionario" name="Codigo_Funcionario" class="form-control" required />
         </div>
 
-        <button type="submit" class="btn btn-primary">Confirmar</button>
+        <button type="submit" class="btn-confirm">Confirmar</button>
 
     </form>
 

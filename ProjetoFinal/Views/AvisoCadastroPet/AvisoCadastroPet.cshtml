@@ -2,19 +2,20 @@
     ViewData["Title"] = "Cadastro Concluído";
 }
 
-<link href="~/../../../../área de trabalho/projetofinal/projetofinal/wwwroot/css/avisocadastropet.css" rel="stylesheet" />
+<!-- Link do CSS individual -->
+<link href="@Url.Content("~/css/avisoCadastroPet.css")" rel="stylesheet" />
 
-<div class="container mt-5" style="max-width: 550px;">
+<div class="container-aviso">
 
-    <div class="card shadow-sm p-4 text-center">
+    <div class="card-aviso">
 
-        <h3 class="mb-3">Cadastro Realizado!</h3>
+        <h3 class="aviso-title">Cadastro Realizado!</h3>
 
-        <p class="mb-3">
+        <p class="aviso-text">
             O Pet foi cadastrado com sucesso.
         </p>
 
-        <a class="btn btn-primary btn-lg w-75 mb-3"
+        <a class="btn-aviso"
            asp-controller="Menu"
            asp-action="Menu">
             Voltar ao Menu

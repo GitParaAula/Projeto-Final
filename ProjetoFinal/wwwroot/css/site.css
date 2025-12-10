@@ -1,38 +1,63 @@
-/* ===== PALETA ===== */
 :root {
     --azul: #00698B;
     --branco: #FFFDFE;
     --marrom: #E1A658;
 }
 
-/* ===== ESTRUTURA GERAL ===== */
 body {
-    background: var(--branco);
     font-family: "Segoe UI", Arial, sans-serif;
     margin: 0;
     padding: 0;
     color: #1a1a1a;
 }
 
-/* ===== CONTAINER CENTRAL ===== */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main.home-container {
+    flex: 1; /* faz o conteúdo principal ocupar todo o espaço entre header e footer */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-custom, .footer {
+    width: 100%;
+}
+
+.footer-content, .header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ===== CONTAINER GERAL DA HOME ===== */
+
 .home-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    padding: 60px 20px;
+    width: 100%;
 }
+
+
+/* ===== CARD PRINCIPAL (BOAS-VINDAS) ===== */
 
 .home-card {
+    max-width: 500px; /* tamanho correto */
+    margin: 40px auto; /* centraliza */
+    padding: 30px 40px;
     background: var(--branco);
-    padding: 40px 50px;
-    max-width: 600px;
-    width: 100%;
-    text-align: center;
-    border-radius: 16px;
+    border-radius: 20px;
     box-shadow: 0px 4px 14px rgba(0,0,0,0.12);
+    text-align: center;
 }
 
-/* ===== TÍTULOS ===== */
+
 .home-title {
     font-size: 2.6rem;
     margin-bottom: 20px;
@@ -40,9 +65,9 @@ body {
     font-weight: 700;
 }
 
-    .home-title span {
-        color: var(--marrom);
-    }
+.home-title span {
+    color: var(--marrom);
+}
 
 .home-subtitle {
     font-size: 1.2rem;
@@ -50,7 +75,6 @@ body {
     margin-bottom: 35px;
 }
 
-/* ===== BOTÕES ===== */
 .home-buttons {
     display: flex;
     justify-content: center;
@@ -85,6 +109,8 @@ body {
     background: #cf914d;
 }
 
+/* ===== SEÇÃO DO VIDEO DE FUNDO ====== */
+
 .bg-video {
     position: fixed;
     top: 0;
@@ -92,6 +118,209 @@ body {
     width: 100%;
     height: 100vh;
     object-fit: cover;
-    z-index: -2; /* fica atrás de tudo */
+    z-index: -2;
     filter: brightness(60%);
+}
+
+/* ===== SEÇÃO DO HEADER ====== */
+
+.header-custom {
+    background: linear-gradient(90deg, var(--azul), var(--marrom)) !important;
+    padding: 20px 0 !important;
+    width: 100% !important;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    height: 70px;
+    width: 100px;
+    object-fit: contain;
+}
+
+.header-logo a {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    line-height: 1;
+}
+
+.header-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+}
+
+.header-nav ul li a {
+    color: #FFF;
+    text-decoration: none;
+    font-size: 24px;
+    transition: 0.3s;
+}
+
+.header-nav ul li a:hover {
+    transform: scale(1.05);
+    color: var(--azul);
+    font-weight: 500;
+}
+
+/* ===== SEÇÃO DO FOOTER ====== */
+
+.footer, .footer-custom {
+    background: linear-gradient(90deg, var(--azul), var(--marrom));
+    padding: 25px 0 !important;
+    width: 100% !important;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-logo img {
+    height: 70px;
+    width: auto;
+}
+
+.footer-logo span {
+    font-size: 25px;
+    font-weight: bold;
+    color: #FFFDFE;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+
+.footer-links {
+    display: flex;
+    gap: 25px;
+}
+
+.footer-links a {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* espaço entre o ícone e o texto */
+    color: #FFFDFE;
+    font-size: 20px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links a img {
+    height: 26px;   /* ajuste o tamanho do ícone */
+    width: auto;    /* mantém proporção da imagem */
+}
+
+.footer-links a:hover {
+    opacity: 0.7;
+    transform: scale(1.05);
+}
+
+.footer-info {
+    color: #FFFDFE;
+    font-size: 20px;
+}
+
+/* ===== SEÇÃO DE INFORMAÇÕES ====== */
+
+.info-section {
+    width: 100%;
+    max-width: 900px; /* alinhado com o card principal */
+    margin: 20px auto 80px;
+    padding: 0 20px;
+}
+
+.info-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.info-cards {
+    color: white !important;
+    display: flex;
+    flex-direction: column; /* forçar vertical */
+    gap: 30px;
+}
+
+/* cada card */
+.info-card {
+    background: linear-gradient(90deg, #00698B, #E1A658);
+    border-radius: 16px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0px 4px 14px rgba(0,0,0,0.12);
+    transition: 0.25s ease;
+    font-size: 20px;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+}
+
+.info-img {
+    width: 160px;
+    height: 120px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.info-card h3 {
+    color: white !important;
+    font-size: 1.4rem;
+    margin-bottom: 18px;
+}
+
+/* FORÇAR HEADER/FOOTER A NÃO FICAREM FIXOS */
+header,
+.header-custom,
+footer,
+.footer-custom,
+.navbar,
+.navbar-fixed-top,
+.navbar-fixed-bottom,
+.fixed-top,
+.fixed-bottom,
+.sticky-top {
+    position: static !important;
+    top: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    margin: 0 !important;
+    width: 100% !important;
+    z-index: auto !important;
 }

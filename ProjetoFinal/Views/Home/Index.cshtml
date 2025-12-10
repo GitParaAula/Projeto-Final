@@ -2,36 +2,71 @@
     ViewData["Title"] = "Home Page";
 }
 
-<link href="~/css/site.css" rel="stylesheet" />
-
 <video autoplay loop muted playsinline class="bg-video">
-    <source src="~/videos/videoplaybackgato2.mp4" type="video/mp4" />
+    <source src="@Url.Content("~/videos/videoplaybackgato2.mp4")" type="video/mp4" />
 </video>
 
-<div class="home-container">
-
-    <div class="home-card">
-
-        <h1 class="home-title">Bem-vindo à <span>VitaPet</span>!</h1>
-
-        <p class="home-subtitle">
-            Selecione uma opção abaixo para continuar.
-        </p>
-
-        <div class="home-buttons">
-            <a class="home-btn primary"
-               asp-controller="LoginFunc"
-               asp-action="LoginFunc">
-                Fazer Login
-            </a>
-
-            <a class="home-btn secondary"
-               asp-controller="LoginCliente"
-               asp-action="LoginCliente">
-                Consultar Info do Cliente
-            </a>
+<header class="header-custom">
+    <div class="container header-content">
+        <div class="header-logo">
+            <img src="@Url.Content("~/images/logoc.png")" alt="Logo" class="logo-img">
+            <a href="@Url.Action("Index", "Home")">VitaPet</a>
         </div>
+        <nav class="header-nav">
+            <ul>
+                <li><a asp-controller="Home" asp-action="Index">Início</a></li>
+                <li><a asp-controller="Home" asp-action="About">Login</a></li>
+                <li><a asp-controller="Home" asp-action="Contact">Cadastro</a></li>
+                <li><a asp-controller="Home" asp-action="Index">Cliente</a></li>
+                <li><a asp-controller="Home" asp-action="About">Funcionário</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
+<main class="home-container">
+    <div class="home-card">
+        <h1 class="home-title">Bem-vindo à <span>VitaPet</span>!</h1>
+        <p class="home-subtitle">Selecione uma opção abaixo para continuar.</p>
+        <div class="home-buttons">
+            <a class="home-btn primary" asp-controller="LoginFunc" asp-action="LoginFunc">Fazer Login</a>
+            <a class="home-btn secondary" asp-controller="LoginCliente" asp-action="LoginCliente">Consultar Info do Cliente</a>
+        </div>
     </div>
 
-</div>
+    <section class="info-section">
+        <h2 class="info-title">Cuidados Essenciais com seu Pet</h2>
+        <div class="info-cards">
+            <div class="info-card">
+                <img src="@Url.Content("~/images/a3.jpg")" class="info-img" alt="Cuidados básicos" />
+                <h3>Higiene e Saúde</h3>
+                <p>Manter a escovação, banho e vacinas em dia é fundamental para garantir bem-estar e evitar doenças no seu pet.</p>
+            </div>
+            <div class="info-card">
+                <img src="@Url.Content("~/images/a1.jpg")" class="info-img" alt="Alimentação" />
+                <h3>Alimentação Ideal</h3>
+                <p>Ofereça ração adequada para a idade e tamanho. Evite alimentos humanos que podem prejudicar a saúde do animal.</p>
+            </div>
+            <div class="info-card">
+                <img src="@Url.Content("~/images/a2.jpg")" class="info-img" alt="Atividades" />
+                <h3>Atividade e Bem-Estar</h3>
+                <p>Caminhadas, brinquedos e estímulos mentais ajudam a reduzir estresse e melhorar a qualidade de vida do seu pet.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="footer-content container">
+        <div class="footer-logo">
+            <img src="@Url.Content("~/images/logoc.png")" alt="Logo">
+            <span>VitaPet</span>
+        </div>
+        <div class="footer-links">
+            <a href="https://www.instagram.com/vitta__pet/" target="_blank"><img src="@Url.Content("~/images/icons8-instagram-96.png")" alt="Instagram">Instagram</a>
+            <a href="https://wa.me/5511961320557?text=Ol%C3%A1" target="_blank"><img src="@Url.Content("~/images/icons8-whatsapp-96.png")" alt="WhatsApp">WhatsApp</a>
+            <a href="https://www.linkedin.com/in/vita-petts-" target="_blank"><img src="@Url.Content("~/images/icons8-linkedin-96.png")" alt="LinkedIn">LinkedIn</a>
+        </div>
+        <div class="footer-info">&copy; 2025 VitaPet</div>
+    </div>
+</footer>
