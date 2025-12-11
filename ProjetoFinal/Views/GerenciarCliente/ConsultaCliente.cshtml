@@ -12,7 +12,7 @@
     <h2 class="consulta-titulo">Atualizar Clientes</h2>
 
     <!-- CAMPO DE BUSCA -->
-    <form method="get" asp-controller="ConsultaCliente" asp-action="ConsultaCliente" class="consulta-form">
+    <form method="get" asp-action="ConsultaCliente" class="consulta-form">
         <input type="text" name="nome" placeholder="Digite o nome do cliente" />
         <button type="submit">Buscar</button>
     </form>
@@ -49,6 +49,6 @@
     </div>
 
     <!-- BOTÃO VOLTAR -->
-    <a asp-controller="Atualizar" asp-action="Atualizar" class="btn-voltar">Voltar</a>
+    <a asp-controller="Consultar" asp-action="Consultar" class="btn-voltar">Voltar</a>
 
 </div>

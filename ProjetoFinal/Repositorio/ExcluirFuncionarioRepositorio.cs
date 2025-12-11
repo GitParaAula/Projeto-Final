@@ -54,6 +54,16 @@ namespace ProjetoFinal.Repositorio
             {
                 cn.Open();
 
+                // 1. APAGAR primeiro o histórico relacionado ao funcionário
+                string queryHist = "DELETE FROM tbHistoricoCadastro WHERE Codigo_Funcionario = @id";
+
+                using (MySqlCommand cmdHist = new(queryHist, cn))
+                {
+                    cmdHist.Parameters.AddWithValue("@id", id);
+                    cmdHist.ExecuteNonQuery();
+                }
+
+                // 2. AGORA apagar o funcionário (seu código original)
                 string query = "DELETE FROM tbFuncionario WHERE Codigo_Funcionario = @id";
 
                 using (MySqlCommand cmd = new(query, cn))

@@ -49,12 +49,24 @@ namespace ProjetoFinal.Repositorio
         }
 
         // EXCLUIR PLANO
+        // EXCLUIR PLANO
         public void Excluir(int id)
         {
             using (MySqlConnection cn = new MySqlConnection(_conexao))
             {
                 cn.Open();
 
+                // 1️⃣ Primeiro, liberar os pets vinculados ao plano que será apagado
+                string sqlUpdatePets = @"
+            UPDATE tbPet
+            SET Codigo_Plano = NULL
+            WHERE Codigo_Plano = @id";
+
+                MySqlCommand cmdUpdatePets = new MySqlCommand(sqlUpdatePets, cn);
+                cmdUpdatePets.Parameters.AddWithValue("@id", id);
+                cmdUpdatePets.ExecuteNonQuery();
+
+                // 2️⃣ Depois, excluir o plano
                 string sql = "DELETE FROM tbPlano WHERE Codigo_Plano = @id";
 
                 MySqlCommand cmd = new MySqlCommand(sql, cn);

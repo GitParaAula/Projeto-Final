@@ -88,7 +88,25 @@ namespace ProjetoFinal.Repositorio
                                 codigoEndereco = Convert.ToInt32(result);
                         }
 
-                        // 2) Excluir o usuário
+                        // 🔥 2) DESVINCULAR PETS DO USUÁRIO (APENAS ACRESCENTADO)
+                        using (var cmdUpdatePet = new MySqlCommand(
+                            "UPDATE tbPet SET Codigo_Usuario = NULL WHERE Codigo_Usuario = @id",
+                            conexao, trans))
+                        {
+                            cmdUpdatePet.Parameters.AddWithValue("@id", codigoUsuario);
+                            cmdUpdatePet.ExecuteNonQuery();
+                        }
+
+                        // 3) APAGAR OS PAGAMENTOS DO USUÁRIO
+                        using (var cmdDelPag = new MySqlCommand(
+                            "DELETE FROM tbPagamento WHERE Codigo_Usuario = @id",
+                            conexao, trans))
+                        {
+                            cmdDelPag.Parameters.AddWithValue("@id", codigoUsuario);
+                            cmdDelPag.ExecuteNonQuery();
+                        }
+
+                        // 4) Excluir o usuário
                         using (var cmdDelUser = new MySqlCommand(
                             "DELETE FROM tbUsuario WHERE Codigo_Usuario = @id",
                             conexao, trans))
@@ -97,7 +115,7 @@ namespace ProjetoFinal.Repositorio
                             cmdDelUser.ExecuteNonQuery();
                         }
 
-                        // 3) Excluir o endereço (se encontrado)
+                        // 5) Excluir o endereço (se encontrado)
                         if (codigoEndereco > 0)
                         {
                             using (var cmdDelEnd = new MySqlCommand(
@@ -113,8 +131,8 @@ namespace ProjetoFinal.Repositorio
                     }
                     catch
                     {
-                        try { trans.Rollback(); } catch { /* ignorar se rollback falhar */ }
-                        throw; // relança para o controller/log tratar
+                        try { trans.Rollback(); } catch { }
+                        throw;
                     }
                 }
             }
@@ -139,7 +157,25 @@ namespace ProjetoFinal.Repositorio
                         codigoEndereco = Convert.ToInt32(result);
                 }
 
-                // 2) Excluir o usuário
+                // 🔥 2) EXCLUIR PETS DO USUÁRIO (APENAS ADICIONADO)
+                string sqlPet = "DELETE FROM tbPet WHERE Codigo_Usuario = @cod";
+
+                using (MySqlCommand cmdPet = new MySqlCommand(sqlPet, conexao))
+                {
+                    cmdPet.Parameters.AddWithValue("@cod", codigoUsuario);
+                    cmdPet.ExecuteNonQuery();
+                }
+
+                // 3) EXCLUIR PAGAMENTOS
+                string sqlPag = "DELETE FROM tbPagamento WHERE Codigo_Usuario = @cod";
+
+                using (MySqlCommand cmdPag = new MySqlCommand(sqlPag, conexao))
+                {
+                    cmdPag.Parameters.AddWithValue("@cod", codigoUsuario);
+                    cmdPag.ExecuteNonQuery();
+                }
+
+                // 4) Excluir o usuário
                 string sqlUsuario = "DELETE FROM tbUsuario WHERE Codigo_Usuario = @cod";
 
                 using (MySqlCommand cmdUser = new MySqlCommand(sqlUsuario, conexao))
@@ -148,7 +184,7 @@ namespace ProjetoFinal.Repositorio
                     cmdUser.ExecuteNonQuery();
                 }
 
-                // 3) Excluir o endereço (se existir)
+                // 5) Excluir o endereço (se existir)
                 if (codigoEndereco > 0)
                 {
                     string sqlDelEnd = "DELETE FROM tbEndereco WHERE Codigo_Endereco = @end";
