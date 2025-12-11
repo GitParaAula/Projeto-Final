@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Consultar Histórico de Cadastros";
+}
+
+<link href="~/css/historicopagamentos.css" rel="stylesheet" />
+
+<div class="container-historico">
+
+    <h2 class="text-center mb-4">Histórico de Cadastros do Funcionario</h2>
+
+    <p class="descricao">Digite o código do Funcionario para ver seu histórico de pagamentos:</p>
+
+    <form method="get" asp-controller="HistoricoCadastroConsulta" asp-action="Listar">
+        <div class="input-group mb-3 search-box">
+            <input type="number" name="codigoFuncionario" class="form-control" placeholder="Código do Funcionario" required />
+            <button type="submit" class="btn btn-primary">Ver Histórico</button>
+        </div>
+    </form>
+
+    <a asp-controller="Consultar"
+       asp-action="Consultar"
+       class="btn btn-secondary w-100 mt-3">
+        Voltar
+    </a>
+
+</div>

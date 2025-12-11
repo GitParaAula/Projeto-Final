@@ -1,0 +1,46 @@
+﻿@model List<ProjetoFinal.Models.HistoricoCadastro>
+
+@{
+    ViewData["Title"] = "Histórico de Cadastros";
+}
+
+<link href="~/css/historicocliente.css" rel="stylesheet" />
+
+<div class="container mt-5" style="max-width: 800px;">
+    <h2 class="text-center mb-4">Últimos Cadastros Realizados</h2>
+
+    @if (Model == null || !Model.Any())
+    {
+        <p class="text-center text-danger">Nenhum histórico encontrado para este funcionário.</p>
+    }
+    else
+    {
+        <table class="table table-bordered table-striped">
+            <thead class="table-primary">
+                <tr>
+                    <th>Código Histórico</th>
+                    <th>Tipo de Cadastro</th>
+                    <th>Nome</th>
+                    <th>Data do Cadastro</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var h in Model)
+                {
+                    <tr>
+                        <td>@h.Codigo_HistoricoCadastro</td>
+                        <td>@h.TipoCadastro</td>
+                        <td>@h.Nome</td>
+                        <td>@h.DataCadastro.ToString("dd/MM/yyyy HH:mm")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+
+    <a asp-controller="SolicitacaoCodigoFunc"
+       asp-action="SolicitacaoCodigoFunc"
+       class="bt-back">
+        Voltar
+    </a>
+</div>
