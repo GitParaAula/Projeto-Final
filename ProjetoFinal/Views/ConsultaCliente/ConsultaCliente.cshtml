@@ -1,15 +1,15 @@
 ﻿@model List<ProjetoFinal.Models.Usuario>
 
 @{
-    ViewData["Title"] = "Atualizar Clientes";
+    ViewData["Title"] = "Consultar Clientes";
 }
 
-<link href="@Url.Content("~/css/atualizarcliente.css")" rel="stylesheet" />
+<link href="@Url.Content("~/css/consultacliente.css")" rel="stylesheet" />
 
 <div class="consulta-container">
 
     <!-- TÍTULO -->
-    <h2 class="consulta-titulo">Atualizar Clientes</h2>
+    <h2 class="consulta-titulo">Clientes Registrados</h2>
 
     <!-- CAMPO DE BUSCA -->
     <form method="get" asp-action="ConsultaCliente" class="consulta-form">
@@ -19,7 +19,7 @@
 
     <!-- TABELA DE CLIENTES -->
     <div class="table-container">
-        <table class="table-custom">
+        <table class="table table-custom table-striped">
             <thead>
                 <tr>
                     <th>Nome</th>

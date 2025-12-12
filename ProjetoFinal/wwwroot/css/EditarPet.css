@@ -46,9 +46,9 @@
     border: none;
 }
 
-    .btn-voltar:hover {
-        background-color: #c68d47;
-    }
+.btn-voltar:hover {
+    background-color: #c68d47;
+}
 
 /* Botão de salvar */
 .btn-success {
@@ -59,6 +59,6 @@
     transition: 0.2s;
 }
 
-    .btn-success:hover {
-        background-color: #218838;
-    }
+.btn-success:hover {
+    background-color: #218838;
+}

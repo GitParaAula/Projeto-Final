@@ -6,7 +6,7 @@ body {
 
 /* Container central do formulário */
 .form-container {
-    width: 50%;
+    width: 700px;
     margin: 80px auto 100px auto;
     background: #ffffff;
     padding: 35px;
@@ -30,21 +30,23 @@ h2 {
 .btn-primary {
     background-color: #00698B;
     border: none;
+    padding: 12px;
 }
 
-    .btn-primary:hover {
-        background-color: #00526e;
-    }
+.btn-primary:hover {
+    background-color: #00526e;
+}
 
 /* Botão voltar */
 .btn-secondary {
     background-color: #E1A658;
     border: none;
+    padding: 12px;
 }
 
-    .btn-secondary:hover {
-        background-color: #c68f4c;
-    }
+.btn-secondary:hover {
+    background-color: #c68f4c;
+}
 
 /* Espaço antes do footer */
 footer {

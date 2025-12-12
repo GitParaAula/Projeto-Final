@@ -10,6 +10,17 @@
     height: auto;
 }
 
+.bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -2;
+    filter: brightness(60%);
+}
+
 /* NAVBAR */
 .custom-navbar {
     background-color: #00698B;

@@ -1,26 +1,25 @@
-﻿/* Container centralizado */
+﻿/* ===== CONTAINER PRINCIPAL ===== */
 .consulta-container {
-    width: 700px; /* ou 80% se quiser responsivo */
-    max-width: 90%;
-    margin: 50px auto; /* centraliza horizontalmente */
+    width: 800px;
+    max-width: 95%;
+    margin: 50px auto;
     background-color: #FFFDFE;
     padding: 35px;
-    border-radius: 10px;
+    border-radius: 12px;
     box-shadow: 0 0 12px rgba(0,0,0,0.15);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Título */
+/* ===== TÍTULO ===== */
 .consulta-titulo {
     color: #00698B;
     font-weight: 700;
     margin-bottom: 25px;
-    text-align: center;
 }
 
-/* Formulário de busca */
+/* ===== FORM DE BUSCA (inputs verdes suaves) ===== */
 .consulta-form {
     display: flex;
     gap: 10px;
@@ -28,11 +27,19 @@
     margin-bottom: 25px;
 }
 
+/* Verde MUITO suave — translúcido */
 .consulta-form input {
     flex: 1;
     padding: 10px;
     border-radius: 6px;
-    border: 1px solid #ccc;
+
+    border: 2px solid rgba(5, 77, 50, 0.25); /* verde claro translúcido */
+    background-color: rgba(5, 77, 50, 0.05);  /* quase branco com toque verde */
+}
+
+/* Hover verde suave */
+.consulta-form input:hover {
+    background-color: rgba(5, 77, 50, 0.12);
 }
 
 .consulta-form button {
@@ -46,39 +53,64 @@
 }
 
 .consulta-form button:hover {
-    background-color: #00526E;
+    background-color: #003e52;
 }
 
-/* Tabela */
+/* ===== TABELA – verde ===== */
 .table-container {
     width: 100%;
     overflow-x: auto;
-    border-radius: 8px;
+    margin-top: 10px;
 }
 
-.table-custom {
+.table-primary-custom {
     width: 100%;
     border-collapse: collapse;
     text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-.table-custom th, .table-custom td {
+/* Header verde escuro */
+.table-primary-custom thead {
+    background-color: #054d32;
+    color: #FFFDFE;
+    font-weight: bold;
+}
+
+.table-primary-custom th,
+.table-primary-custom td {
     padding: 12px;
     border: 1px solid #ccc;
     vertical-align: middle;
 }
 
-.table-custom thead {
-    background-color: #00698B;
+/* linhas alternadas — verde claro */
+.table-primary-custom tbody tr:nth-child(odd) {
+    background-color: rgba(5, 77, 50, 0.07);
+}
+
+/* Hover – verde mais forte, mas suave */
+.table-primary-custom tbody tr:hover {
+    background-color: rgba(5, 77, 50, 0.16);
+}
+
+/* ===== BOTÃO EDITAR ===== */
+.btn-editar {
+    display: inline-block;
+    background-color: #149923;
     color: #FFFDFE;
-    font-weight: bold;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
 }
 
-.table-custom tbody tr:nth-child(odd) {
-    background-color: #f2f9fc;
+.btn-editar:hover {
+    background-color: #00526E;
 }
 
-/* Botão voltar */
+/* ===== BOTÃO VOLTAR ===== */
 .btn-voltar {
     display: block;
     width: 100%;
@@ -89,7 +121,7 @@
     font-weight: 600;
     text-align: center;
     border: none;
-    margin-top: 20px;
+    margin-top: 25px;
     text-decoration: none;
 }
 

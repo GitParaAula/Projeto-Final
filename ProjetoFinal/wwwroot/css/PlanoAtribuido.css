@@ -1,0 +1,40 @@
+﻿/* ===== CORES PADRÃO ===== */
+:root {
+    --azul: #00698B;
+    --branco: #FFFDFE;
+    --marrom: #E1A658;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    background: var(--branco);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== TÍTULO ===== */
+h2 {
+    color: var(--azul);
+    font-weight: 700;
+}
+
+/* ===== TEXTO ===== */
+p {
+    font-size: 17px;
+    color: #333;
+}
+
+/* ===== BOTÃO VOLTAR AO MENU ===== */
+.btn-primary {
+    background: var(--azul) !important;
+    border: none !important;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background: #00597a !important;
+}

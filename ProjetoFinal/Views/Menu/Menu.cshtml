@@ -4,6 +4,58 @@
 
 <link href="~/css/menu.css" rel="stylesheet" />
 
+<video autoplay loop muted playsinline class="bg-video">
+    <source src="@Url.Content("~/videos/wavesplayback.mp4")" type="video/mp4" />
+</video>
+
+<link href="~/css/menu_popup.css" rel="stylesheet" />
+
+<!-- POPUP -->
+<div id="popup-overlay" class="popup-overlay">
+    <div class="popup-card">
+        <h2>Bem-vindo!</h2>
+        <p>Olá, bem-vindo ao sistema de gerenciamento da VitaPet. Aqui você pode cadastrar, gerenciar e administrar toda a base de dados.</p>
+
+        <label class="checkbox-hide">
+            <input type="checkbox" id="hidePopupCheckbox">
+            Não exibir novamente
+        </label>
+
+        <button class="btn-popup" id="closePopupBtn">Entendi</button>
+    </div>
+</div>
+
+<script>
+    window.onload = function () {
+        const popup = document.getElementById("popup-overlay");
+        const closeBtn = document.getElementById("closePopupBtn");
+        const checkbox = document.getElementById("hidePopupCheckbox");
+
+        // Se marcado anteriormente, não mostrar novamente
+        if (localStorage.getItem("hidePopupMenu") === "true") {
+            popup.style.display = "none";
+            return;
+        }
+
+        // Exibir popup normalmente
+        popup.style.display = "flex";
+
+        // Botão "Entendi"
+        closeBtn.addEventListener("click", () => {
+            if (checkbox.checked) {
+                localStorage.setItem("hidePopupMenu", "true");
+            }
+
+            popup.style.opacity = "0";
+
+            setTimeout(() => {
+                popup.style.display = "none";
+            }, 300);
+        });
+    };
+</script>
+
+
 <nav class="custom-navbar">
     <div class="nav-container">
 

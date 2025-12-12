@@ -1,2 +1,70 @@
-﻿body {
+﻿/* ===== CORES PADRÃO ===== */
+:root {
+    --azul: #00698B;
+    --branco: #FFFDFE;
+    --marrom: #E1A658;
+}
+
+/* ===== CONTAINER GERAL ===== */
+.container {
+    background: var(--branco);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== TÍTULO ===== */
+h2 {
+    color: var(--azul);
+    font-weight: 700;
+}
+
+/* ===== TABELA ===== */
+.table {
+    background: var(--branco);
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.table thead {
+    background: var(--azul);
+    color: white;
+}
+
+.table th {
+    text-align: center !important;
+    vertical-align: middle;
+    font-weight: 600;
+}
+
+.table td {
+    text-align: center !important;
+    vertical-align: middle;
+}
+
+/* ===== LINHAS ===== */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f2f9fc;
+}
+
+/* ===== BOTÃO VOLTAR ===== */
+.bt-back {
+    display: block;
+    width: 100%;
+    background: var(--marrom);
+    color: white !important;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.bt-back:hover {
+    background: #c98c42;
+    color: white;
 }

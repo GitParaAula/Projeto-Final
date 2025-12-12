@@ -69,13 +69,7 @@
 }
 
 .table-custom thead {
-    background-color: #00698B;
-    color: #FFFDFE;
     font-weight: bold;
-}
-
-.table-custom tbody tr:nth-child(odd) {
-    background-color: #f2f9fc;
 }
 
 /* Botão voltar */

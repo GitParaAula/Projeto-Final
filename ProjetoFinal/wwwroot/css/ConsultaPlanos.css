@@ -6,7 +6,7 @@ body {
 
 /* Container principal */
 .container-consulta {
-    width: 65%;
+    width: 700px;
     margin: 80px auto 100px auto;
     background: #ffffff;
     padding: 35px;
@@ -31,9 +31,9 @@ h2 {
     border: none;
 }
 
-    .search-box .btn-primary:hover {
-        background-color: #00526e;
-    }
+.search-box .btn-primary:hover {
+    background-color: #00526e;
+}
 
 /* Tabela */
 .table-responsive {
@@ -58,9 +58,9 @@ table td {
     border: none;
 }
 
-    .btn-secondary:hover {
-        background-color: #c68f4c;
-    }
+.btn-secondary:hover {
+    background-color: #c68f4c;
+}
 
 /* Margem antes do footer */
 footer {

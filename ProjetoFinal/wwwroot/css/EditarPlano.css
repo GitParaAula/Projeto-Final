@@ -29,9 +29,9 @@
     font-weight: 600;
 }
 
-    .btn-success:hover {
-        background-color: #218838;
-    }
+.btn-success:hover {
+    background-color: #218838;
+}
 
 /* Botão voltar */
 .btn-voltar {
@@ -49,6 +49,6 @@
     margin-top: 10px;
 }
 
-    .btn-voltar:hover {
-        background-color: #c68d47;
-    }
+.btn-voltar:hover {
+    background-color: #c68d47;
+}

@@ -14,6 +14,15 @@
     box-shadow: 0 0 12px rgba(0,0,0,0.15);
 }
 
+/* Botão de pesquisa*/
+.btn-primary {
+    background-color: #00698B;
+}
+
+.btn-primary:hover {
+    background-color: #003e52;
+}
+
 /* Título */
 .titulo {
     color: #00698B;
@@ -36,9 +45,9 @@
     border: none;
 }
 
-    .btn-voltar:hover {
-        background-color: #c68d47;
-    }
+.btn-voltar:hover {
+    background-color: #c68d47;
+}
 
 /* Tabela responsiva */
 .table-responsive {

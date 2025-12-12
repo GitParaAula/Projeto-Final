@@ -32,25 +32,41 @@
     border: none;
 }
 
-    .search-box .btn-primary:hover {
-        background-color: #00526e;
-    }
+.search-box .btn-primary:hover {
+    background-color: #00526e;
+}
 
-/* Tabela */
-.table-responsive {
+/* ===== TABELA ===== */
+.table-primary-custom {
+    background-color: #fff;
     border-radius: 10px;
     overflow: hidden;
 }
 
-.table-primary-custom {
-    background-color: #00698B;
-    color: white;
+/* Cabeçalho verde escuro */
+.table-primary-custom thead th {
+    background-color: #054d32 !important;
+    color: #FFFDFE;
     font-weight: bold;
+    text-align: center !important;
 }
 
-table th,
-table td {
-    vertical-align: middle;
+/* Células */
+.table-primary-custom td {
+    text-align: center !important;
+    vertical-align: middle !important;
+    border: 1px solid #ccc;
+    padding: 12px;
+}
+
+/* Linhas alternadas */
+.table-primary-custom tbody tr:nth-child(odd) {
+    background-color: rgba(5, 77, 50, 0.07);
+}
+
+/* Hover verde suave */
+.table-primary-custom tbody tr:hover {
+    background-color: rgba(5, 77, 50, 0.16);
 }
 
 /* Botão voltar */
@@ -68,17 +84,20 @@ table td {
     border: none;
 }
 
-    .btn-voltar:hover {
-        background-color: #c68d47;
-    }
-
-/* Botões de ação (Editar) */
-.btn-warning {
-    background-color: #f0ad4e;
-    color: #fff;
-    border: none;
+.btn-voltar:hover {
+    background-color: #c68d47;
 }
 
-    .btn-warning:hover {
-        background-color: #ec971f;
-    }
+/* Botões de ação (Editar) */
+.btn-warning.btn-sm {
+    background-color: #149923 !important;
+    border: none;
+    font-weight: 600;
+    padding: 6px 12px;
+    color: #FFFDFE !important;
+    border-radius: 6px;
+}
+
+.btn-warning.btn-sm:hover {
+    background-color: #0f7a1c !important;
+}
