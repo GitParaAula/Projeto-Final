@@ -17,6 +17,7 @@ namespace ProjetoFinal.Controllers
 
         // Recebe o código e registra o histórico como CLIENTE
         [HttpPost]
+        [HttpPost]
         public IActionResult Registrar(int Codigo_Funcionario)
         {
             string ultimoNomeUsuario = "";
@@ -25,8 +26,25 @@ namespace ProjetoFinal.Controllers
             {
                 con.Open();
 
-                // Buscar o último USUÁRIO cadastrado
-                string sqlUltimoUsuario = "SELECT Nome FROM tbUsuario ORDER BY Codigo_Usuario DESC LIMIT 1";
+                // 1️⃣ VERIFICAR SE O FUNCIONÁRIO EXISTE
+                string sqlExiste = "SELECT COUNT(*) FROM tbFuncionario WHERE Codigo_Funcionario = @codigo";
+
+                using (MySqlCommand cmdExiste = new MySqlCommand(sqlExiste, con))
+                {
+                    cmdExiste.Parameters.AddWithValue("@codigo", Codigo_Funcionario);
+
+                    int existe = Convert.ToInt32(cmdExiste.ExecuteScalar());
+
+                    if (existe == 0)
+                    {
+                        TempData["Erro"] = "Funcionário não encontrado.";
+                        return RedirectToAction("ConfirmarCliente");
+                    }
+                }
+
+                // 2️⃣ BUSCAR O ÚLTIMO CLIENTE CADASTRADO
+                string sqlUltimoUsuario =
+                    "SELECT Nome FROM tbUsuario ORDER BY Codigo_Usuario DESC LIMIT 1";
 
                 using (MySqlCommand cmd = new MySqlCommand(sqlUltimoUsuario, con))
                 {
@@ -35,10 +53,11 @@ namespace ProjetoFinal.Controllers
                         ultimoNomeUsuario = result.ToString();
                 }
 
-                // Inserir no Historico
-                string sqlInsert = @"INSERT INTO tbHistoricoCadastro 
-                                     (Codigo_Funcionario, TipoCadastro, Nome, DataCadastro) 
-                                     VALUES (@Codigo_Funcionario, 'Cliente', @Nome, NOW())";
+                // 3️⃣ INSERIR NO HISTÓRICO
+                string sqlInsert = @"
+            INSERT INTO tbHistoricoCadastro
+            (Codigo_Funcionario, TipoCadastro, Nome, DataCadastro)
+            VALUES (@Codigo_Funcionario, 'Cliente', @Nome, NOW())";
 
                 using (MySqlCommand cmd = new MySqlCommand(sqlInsert, con))
                 {

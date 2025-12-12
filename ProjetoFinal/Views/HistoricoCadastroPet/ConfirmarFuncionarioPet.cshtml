@@ -11,6 +11,13 @@
 
     <h2>Confirmar Funcionário para Cadastro do Pet</h2>
 
+    @if (TempData["Erro"] != null)
+    {
+        <div class="alert-erro">
+            @TempData["Erro"]
+        </div>
+    }
+
     <form asp-controller="HistoricoCadastroPet" asp-action="RegistrarPet" method="post">
 
         <div class="form-group">

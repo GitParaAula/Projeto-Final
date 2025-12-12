@@ -17,6 +17,7 @@ namespace ProjetoFinal.Controllers
 
         // Recebe o código e registra o histórico de PET
         [HttpPost]
+        [HttpPost]
         public IActionResult RegistrarPet(int Codigo_Funcionario)
         {
             string ultimoNomePet = "";
@@ -25,8 +26,30 @@ namespace ProjetoFinal.Controllers
             {
                 con.Open();
 
-                // 1. Buscar o último PET cadastrado
-                string sqlUltimoPet = "SELECT Nome FROM tbPet ORDER BY Codigo_Pet DESC LIMIT 1";
+                // ===============================
+                // 1️⃣ VERIFICAR SE FUNCIONÁRIO EXISTE
+                // ===============================
+                string sqlVerificaFuncionario =
+                    "SELECT COUNT(*) FROM tbFuncionario WHERE Codigo_Funcionario = @Codigo";
+
+                using (MySqlCommand cmd = new MySqlCommand(sqlVerificaFuncionario, con))
+                {
+                    cmd.Parameters.AddWithValue("@Codigo", Codigo_Funcionario);
+
+                    int existe = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    if (existe == 0)
+                    {
+                        TempData["Erro"] = "Funcionário não encontrado.";
+                        return RedirectToAction("ConfirmarFuncionarioPet");
+                    }
+                }
+
+                // ===============================
+                // 2️⃣ BUSCAR ÚLTIMO PET CADASTRADO
+                // ===============================
+                string sqlUltimoPet =
+                    "SELECT Nome FROM tbPet ORDER BY Codigo_Pet DESC LIMIT 1";
 
                 using (MySqlCommand cmd = new MySqlCommand(sqlUltimoPet, con))
                 {
@@ -35,10 +58,13 @@ namespace ProjetoFinal.Controllers
                         ultimoNomePet = result.ToString();
                 }
 
-                // 2. Inserir no histórico
-                string sqlInsert = @"INSERT INTO tbHistoricoCadastro 
-                                     (Codigo_Funcionario, TipoCadastro, Nome, DataCadastro) 
-                                     VALUES (@Codigo_Funcionario, 'Pet', @Nome, NOW())";
+                // ===============================
+                // 3️⃣ INSERIR NO HISTÓRICO
+                // ===============================
+                string sqlInsert = @"
+            INSERT INTO tbHistoricoCadastro 
+            (Codigo_Funcionario, TipoCadastro, Nome, DataCadastro) 
+            VALUES (@Codigo_Funcionario, 'Pet', @Nome, NOW())";
 
                 using (MySqlCommand cmd = new MySqlCommand(sqlInsert, con))
                 {
@@ -51,7 +77,9 @@ namespace ProjetoFinal.Controllers
                 con.Close();
             }
 
-            // Redireciona para uma tela de aviso
+            // ===============================
+            // ✅ SUCESSO
+            // ===============================
             return RedirectToAction("AvisoCadastroPet", "AvisoCadastroPet");
         }
     }

@@ -16,6 +16,13 @@
             <input type="hidden" asp-for="Codigo_Usuario" />
             <input type="hidden" asp-for="Endereco.Codigo_Endereco" />
 
+            @if (TempData["Erro"] != null)
+            {
+                <div class="alert-erro">
+                    @TempData["Erro"]
+                </div>
+            }
+
             <h4>Dados Pessoais</h4>
 
             <label>Nome</label>

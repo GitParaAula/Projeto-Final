@@ -11,6 +11,13 @@
 
         <h2 class="text-center mb-4">Cadastro de Pet</h2>
 
+        @if (TempData["Erro"] != null)
+        {
+            <div class="alert-erro">
+                @TempData["Erro"]
+            </div>
+        }
+
         <form asp-action="Salvar" method="post" class="card-form">
 
             <label>Nome do Pet</label>
@@ -22,7 +29,7 @@
             <label>Raça</label>
             <input class="form-control mb-2" asp-for="Raca" required />
 
-            <label>Porte</label>
+            <label>Porte (G = Grande | M = Médio | P = Pequeno)</label>
             <input class="form-control mb-2" asp-for="Porte" maxlength="1" required />
 
             <label>Idade</label>
@@ -30,13 +37,12 @@
 
             <button class="btn btn-primary w-100" type="submit">Cadastrar</button>
 
+            <a class="btn btn-secondary w-100 mt-3"
+               asp-controller="Cadastrar"
+               asp-action="Cadastrar">
+                Voltar
+            </a>
         </form>
-
-        <a class="btn btn-secondary w-100 mt-3"
-           asp-controller="Cadastrar"
-           asp-action="Cadastrar">
-            Voltar
-        </a>
 
     </div>
 </main>

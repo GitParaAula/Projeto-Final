@@ -25,7 +25,7 @@ namespace ProjetoFinal.Controllers
 
             TempData["Mensagem"] = resultado;
 
-            if (resultado.Contains("incorreto"))
+            if (resultado.Contains("encontrado"))
             {
                 TempData["MensagemClasse"] = "alert-danger";
                 return RedirectToAction("AtribuirPlano");

@@ -67,5 +67,23 @@ namespace ProjetoFinal.Repositorio
 
             return lista;
         }
+        public bool UsuarioExiste(int codigoUsuario)
+        {
+            using (var con = new MySqlConnection(_conexao))
+            {
+                con.Open();
+
+                // Ajuste o nome da tabela/coluna se seu schema for diferente (ex.: tbUsuario, Codigo_Usuario)
+                string sql = @"SELECT COUNT(1) FROM tbUsuario WHERE Codigo_Usuario = @codigoUsuario;";
+                MySqlCommand cmd = new MySqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@codigoUsuario", codigoUsuario);
+
+                var result = cmd.ExecuteScalar();
+                if (result != null && Convert.ToInt32(result) > 0)
+                    return true;
+
+                return false;
+            }
+        }
     }
 }

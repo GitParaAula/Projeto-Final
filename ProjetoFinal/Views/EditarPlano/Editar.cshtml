@@ -12,6 +12,13 @@
 
         <h2 class="titulo text-center mb-4">Editar Plano</h2>
 
+        @if (TempData["Erro"] != null)
+        {
+            <div class="alert-erro">
+                @TempData["Erro"]
+            </div>
+        }
+
         <form asp-action="Editar" method="post" onsubmit="return confirmarEdicao();">
 
             <input type="hidden" asp-for="Codigo_Plano" />

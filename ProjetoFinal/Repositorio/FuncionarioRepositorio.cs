@@ -124,5 +124,23 @@ namespace ProjetoFinal.Repositorio
                 cmd.ExecuteNonQuery();
             }
         }
+        // VERIFICAR SE CPF EXISTE EM OUTRO REGISTRO
+        public bool CpfExisteEmOutroFuncionario(string cpf, int idAtual)
+        {
+            using (var con = new MySqlConnection(_conexao))
+            {
+                con.Open();
+                string sql = @"SELECT COUNT(*) 
+                       FROM tbFuncionario 
+                       WHERE Cpf = @cpf AND Codigo_Funcionario <> @idAtual";
+
+                MySqlCommand cmd = new(sql, con);
+                cmd.Parameters.AddWithValue("@cpf", cpf);
+                cmd.Parameters.AddWithValue("@idAtual", idAtual);
+
+                int qtd = Convert.ToInt32(cmd.ExecuteScalar());
+                return qtd > 0;
+            }
+        }
     }
 }

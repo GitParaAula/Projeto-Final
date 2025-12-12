@@ -25,7 +25,7 @@ namespace ProjetoFinal.Repositorio
                 long petExiste = (long)cmdPet.ExecuteScalar();
 
                 if (petExiste == 0)
-                    return "O código do pet está incorreto.";
+                    return "Pet não encontrado.";
 
                 // Verificar plano
                 string sqlPlano = "SELECT COUNT(*) FROM tbPlano WHERE Codigo_Plano = @plano";
@@ -35,7 +35,7 @@ namespace ProjetoFinal.Repositorio
                 long planoExiste = (long)cmdPlano.ExecuteScalar();
 
                 if (planoExiste == 0)
-                    return "O código do plano está incorreto.";
+                    return "Plano não encontrado.";
 
                 // Atualizar pet com o plano
                 string sqlUpdate =

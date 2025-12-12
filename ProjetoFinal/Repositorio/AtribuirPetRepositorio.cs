@@ -25,7 +25,7 @@ namespace ProjetoFinal.Repositorio
                 long petExiste = (long)cmdPet.ExecuteScalar();
 
                 if (petExiste == 0)
-                    return "O código do pet está incorreto.";
+                    return "Pet não encontrado.";
 
                 // Verificar dono
                 string sqlDono = "SELECT COUNT(*) FROM tbUsuario WHERE Codigo_Usuario = @dono";
@@ -35,7 +35,7 @@ namespace ProjetoFinal.Repositorio
                 long donoExiste = (long)cmdDono.ExecuteScalar();
 
                 if (donoExiste == 0)
-                    return "O código do dono está incorreto.";
+                    return "Dono não encontrado.";
 
                 // Atualizar pet
                 string sqlUpdate =

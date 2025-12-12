@@ -11,6 +11,13 @@
 
     <h2>Confirmar Funcionário do Cadastro de Plano</h2>
 
+    @if (TempData["Erro"] != null)
+    {
+        <div class="alert-erro">
+            @TempData["Erro"]
+        </div>
+    }
+
     <form asp-controller="HistoricoCadastroPlano" asp-action="RegistrarPlano" method="post">
 
         <div class="form-group">

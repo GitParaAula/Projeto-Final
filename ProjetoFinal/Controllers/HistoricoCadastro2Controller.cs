@@ -25,8 +25,25 @@ namespace ProjetoFinal.Controllers
             {
                 con.Open();
 
-                // Buscar o último funcionário cadastrado
-                string sqlUltimoFun = "SELECT Nome FROM tbFuncionario ORDER BY Codigo_Funcionario DESC LIMIT 1";
+                // 1️⃣ VERIFICAR SE O FUNCIONÁRIO EXISTE
+                string sqlExiste = "SELECT COUNT(*) FROM tbFuncionario WHERE Codigo_Funcionario = @codigo";
+
+                using (MySqlCommand cmdExiste = new MySqlCommand(sqlExiste, con))
+                {
+                    cmdExiste.Parameters.AddWithValue("@codigo", Codigo_Funcionario);
+
+                    int existe = Convert.ToInt32(cmdExiste.ExecuteScalar());
+
+                    if (existe == 0)
+                    {
+                        TempData["Erro"] = "Funcionário não encontrado.";
+                        return RedirectToAction("ConfirmarFuncionario2");
+                    }
+                }
+
+                // 2️⃣ BUSCAR O NOME DO ÚLTIMO FUNCIONÁRIO CADASTRADO
+                string sqlUltimoFun =
+                    "SELECT Nome FROM tbFuncionario ORDER BY Codigo_Funcionario DESC LIMIT 1";
 
                 using (MySqlCommand cmd = new MySqlCommand(sqlUltimoFun, con))
                 {
@@ -35,10 +52,11 @@ namespace ProjetoFinal.Controllers
                         ultimoNomeFuncionario = result.ToString();
                 }
 
-                // Inserir no Historico
-                string sqlInsert = @"INSERT INTO tbHistoricoCadastro 
-                                     (Codigo_Funcionario, TipoCadastro, Nome, DataCadastro) 
-                                     VALUES (@Codigo_Funcionario, 'Funcionario', @Nome, NOW())";
+                // 3️⃣ INSERIR NO HISTÓRICO
+                string sqlInsert = @"
+            INSERT INTO tbHistoricoCadastro 
+            (Codigo_Funcionario, TipoCadastro, Nome, DataCadastro) 
+            VALUES (@Codigo_Funcionario, 'Funcionario', @Nome, NOW())";
 
                 using (MySqlCommand cmd = new MySqlCommand(sqlInsert, con))
                 {
@@ -51,7 +69,7 @@ namespace ProjetoFinal.Controllers
                 con.Close();
             }
 
-            return RedirectToAction("RedirecionamentoMenu","RedirecionamentoMenu");
+            return RedirectToAction("RedirecionamentoMenu", "RedirecionamentoMenu");
         }
 
         // Tela de confirmação

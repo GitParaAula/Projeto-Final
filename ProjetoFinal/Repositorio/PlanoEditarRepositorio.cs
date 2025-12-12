@@ -88,5 +88,23 @@ namespace ProjetoFinal.Repositorio
 
             cmd.ExecuteNonQuery();
         }
+        public bool NomeJaExiste(string nome, int codigoPlano)
+        {
+            using var conexao = new MySqlConnection(_conexao);
+            conexao.Open();
+
+            string sql = @"SELECT COUNT(*) 
+                   FROM tbPlano 
+                   WHERE Nome = @nome 
+                   AND Codigo_Plano <> @id";
+
+            using var cmd = new MySqlCommand(sql, conexao);
+            cmd.Parameters.AddWithValue("@nome", nome);
+            cmd.Parameters.AddWithValue("@id", codigoPlano);
+
+            int quantidade = Convert.ToInt32(cmd.ExecuteScalar());
+
+            return quantidade > 0;
+        }
     }
 }

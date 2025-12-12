@@ -26,7 +26,7 @@ namespace ProjetoFinal.Controllers
             TempData["Mensagem"] = resultado;
 
             // Checar se é mensagem de erro
-            if (resultado.Contains("incorreto"))
+            if (resultado.Contains("encontrado"))
                 TempData["MensagemClasse"] = "alert-danger"; // vermelho
             else
                 TempData["MensagemClasse"] = "alert-primary"; // azul (sucesso)

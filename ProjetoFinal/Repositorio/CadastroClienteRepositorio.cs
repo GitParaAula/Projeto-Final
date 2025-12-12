@@ -131,5 +131,19 @@ namespace ProjetoFinal.Repositorio
 
             return lista;
         }
+        public bool CpfExiste(string cpf)
+        {
+            using (var con = new MySqlConnection(_conexaoMySQL))
+            {
+                con.Open();
+
+                string sql = "SELECT COUNT(*) FROM tbUsuario WHERE Cpf = @cpf";
+                MySqlCommand cmd = new MySqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@cpf", cpf);
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                return count > 0;
+            }
+        }
     }
 }

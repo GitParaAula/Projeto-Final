@@ -179,5 +179,24 @@ namespace ProjetoFinal.Repositorio
                 cmd.ExecuteNonQuery();
             }
         }
+        public bool CpfExisteEmOutroUsuario(string cpf, int idAtual)
+        {
+            using (var con = new MySqlConnection(_conexao))
+            {
+                con.Open();
+
+                string sql = @"
+            SELECT COUNT(*) 
+            FROM tbUsuario 
+            WHERE Cpf = @cpf AND Codigo_Usuario <> @id";
+
+                MySqlCommand cmd = new(sql, con);
+                cmd.Parameters.AddWithValue("@cpf", cpf);
+                cmd.Parameters.AddWithValue("@id", idAtual);
+
+                int qtd = Convert.ToInt32(cmd.ExecuteScalar());
+                return qtd > 0;
+            }
+        }
     }
 }
