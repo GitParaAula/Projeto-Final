@@ -10,6 +10,13 @@
 
         <h2 class="cadastro-title">Cadastro de Funcionário</h2>
 
+        @if (TempData["Erro"] != null)
+        {
+            <div class="alert-erro">
+                @TempData["Erro"]
+            </div>
+        }
+
         <form asp-action="CadastroFunc" method="post">
 
             <div class="form-group">

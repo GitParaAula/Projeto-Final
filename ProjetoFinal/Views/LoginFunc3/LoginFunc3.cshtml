@@ -10,6 +10,13 @@
 
         <h2 class="title">Login do Funcionário</h2>
 
+        @if (TempData["Erro"] != null)
+        {
+            <div class="alert-erro">
+                @TempData["Erro"]
+            </div>
+        }
+
         <form method="post" asp-action="Login" asp-controller="LoginFunc3">
 
             <div class="form-group">

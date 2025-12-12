@@ -79,3 +79,13 @@ label {
 .btn-secondary:hover {
     background-color: #c68d47;
 }
+
+.alert-erro {
+    background: rgba(200, 0, 0, 0.12);
+    padding: 12px;
+    border-radius: 8px;
+    color: #b00000;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+}

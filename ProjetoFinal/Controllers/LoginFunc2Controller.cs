@@ -27,7 +27,7 @@ namespace ProjetoFinal.Controllers
             {
                 return RedirectToAction("Menu", "Menu");
             }
-
+            TempData["Erro"] = "Funcionário não encontrado.";
             return View("LoginFunc2");
         }
     }

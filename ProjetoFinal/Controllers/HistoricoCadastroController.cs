@@ -25,7 +25,24 @@ namespace ProjetoFinal.Controllers
             {
                 con.Open();
 
-                // Buscar o último funcionário cadastrado
+                // 1️⃣ VERIFICAR SE O FUNCIONÁRIO EXISTE
+                string sqlVerificaFun = @"SELECT COUNT(*) 
+                                  FROM tbFuncionario 
+                                  WHERE Codigo_Funcionario = @Codigo";
+
+                using (MySqlCommand cmd = new MySqlCommand(sqlVerificaFun, con))
+                {
+                    cmd.Parameters.AddWithValue("@Codigo", Codigo_Funcionario);
+                    int qtd = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    if (qtd == 0)
+                    {
+                        TempData["Erro"] = "Este Funcionário não existe.";
+                        return RedirectToAction("ConfirmarFuncionario");
+                    }
+                }
+
+                // 2️⃣ Buscar o último funcionário cadastrado (do jeito que você já fazia)
                 string sqlUltimoFun = "SELECT Nome FROM tbFuncionario ORDER BY Codigo_Funcionario DESC LIMIT 1";
 
                 using (MySqlCommand cmd = new MySqlCommand(sqlUltimoFun, con))
@@ -35,10 +52,10 @@ namespace ProjetoFinal.Controllers
                         ultimoNomeFuncionario = result.ToString();
                 }
 
-                // Inserir no Historico
+                // 3️⃣ Inserir no histórico
                 string sqlInsert = @"INSERT INTO tbHistoricoCadastro 
-                                     (Codigo_Funcionario, TipoCadastro, Nome, DataCadastro) 
-                                     VALUES (@Codigo_Funcionario, 'Funcionario', @Nome, NOW())";
+                             (Codigo_Funcionario, TipoCadastro, Nome, DataCadastro) 
+                             VALUES (@Codigo_Funcionario, 'Funcionario', @Nome, NOW())";
 
                 using (MySqlCommand cmd = new MySqlCommand(sqlInsert, con))
                 {

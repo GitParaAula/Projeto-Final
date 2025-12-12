@@ -40,7 +40,7 @@ namespace ProjetoFinal.Repositorio
         public void CadastrarFunc(Funcionario funcionario)
         {
             using (var conexao = new MySqlConnection(_conexaoMySQL))
-            {
+            {   
                 conexao.Open();
                 MySqlCommand cmd = new("INSERT INTO tbFuncionario (Nome, Cpf, Rg) VALUES (@nome, @cpf, @rg)", conexao);
 
