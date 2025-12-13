@@ -15,7 +15,12 @@
             O Pet foi cadastrado com sucesso.
         </p>
 
-        <a class="btn-aviso"
+        <input type="text"
+               class="input-codigo-pet"
+               value="@ViewBag.CodigoPet"
+               readonly />
+
+        <a class="btn-aviso mt-4"
            asp-controller="Menu"
            asp-action="Menu">
             Voltar ao Menu

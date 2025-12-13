@@ -72,3 +72,13 @@
     background: #00506B;
     cursor: pointer;
 }
+
+.input-codigo-cliente {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}

@@ -20,7 +20,16 @@
             Mantenha essa informação em segurança.
         </p>
 
-        <a class="btn-aviso"
+        <p class="aviso-subtext">
+            Código do funcionário cadastrado:
+        </p>
+
+        <input type="text"
+               class="input-codigo-funcionario"
+               value="@ViewBag.CodigoFuncionario"
+               readonly />
+
+        <a class="btn-aviso mt-4"
            asp-controller="Menu"
            asp-action="Menu">
             Voltar para o menu
