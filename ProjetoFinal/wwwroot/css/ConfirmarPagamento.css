@@ -1,0 +1,85 @@
+﻿:root {
+    --azul: #00698B;
+    --branco: #FFFDFE;
+    --marrom: #E1A658;
+}
+
+/* ================= VIDEO DE FUNDO ================= */
+.bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 1;
+}
+
+/* ================= CONTAINER ================= */
+.container {
+    max-width: 600px;
+    margin: 90px auto;
+    padding: 0 15px;
+}
+
+    /* ================= CARD ================= */
+    .container > div,
+    .container {
+        background: var(--branco);
+        padding: 35px 30px;
+        border-radius: 20px;
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+        text-align: center;
+    }
+
+/* ================= TÍTULO ================= */
+h2 {
+    font-size: 1.8rem;
+    color: var(--azul);
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* ================= TEXTO ================= */
+p {
+    font-size: 1.05rem;
+    color: #444;
+    margin-bottom: 25px;
+}
+
+/* ================= BOTÕES ================= */
+button,
+a.btn {
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 12px;
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
+
+/* Confirmar */
+.btn-success {
+    background-color: var(--azul);
+    border: none;
+    padding: 12px;
+}
+
+    .btn-success:hover {
+        background-color: #00506B;
+    }
+
+/* Voltar */
+.btn-secondary {
+    background-color: #999;
+    border: none;
+}
+
+    .btn-secondary:hover {
+        background-color: #777;
+    }
+
+/* Espaçamento entre botões */
+.d-flex {
+    margin-top: 15px;
+}

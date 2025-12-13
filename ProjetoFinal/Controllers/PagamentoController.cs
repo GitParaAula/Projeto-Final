@@ -22,7 +22,6 @@ namespace ProjetoFinal.Controllers
             return View(); // Abre a view para cadastro
         }
         [HttpPost]
-        [HttpPost]
         public IActionResult Cadastrar(Pagamento pagamento)
         {
             // Pegue os valores "crus" enviados pelo form (string) para validar conforme solicitado.

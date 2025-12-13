@@ -4,22 +4,24 @@
 
 <link href="~/css/cadastropet.css" rel="stylesheet" />
 
+<video autoplay loop muted playsinline class="bg-video">
+    <source src="@Url.Content("~/videos/wavesplayback.mp4")" type="video/mp4" />
+</video>
+
 @model ProjetoFinal.Models.Pet
 
 <main class="content">
     <div class="container" style="max-width: 700px;">
 
-        <h2 class="text-center mb-4">Cadastro de Pet</h2>
-
-        @if (TempData["Erro"] != null)
-        {
-            <div class="alert-erro">
-                @TempData["Erro"]
-            </div>
-        }
-
         <form asp-action="Salvar" method="post" class="card-form">
+            <h2 class="text-center mb-4">Cadastro de Pet</h2>
 
+            @if (TempData["Erro"] != null)
+            {
+                <div class="alert-erro">
+                    @TempData["Erro"]
+                </div>
+            }
             <label>Nome do Pet</label>
             <input class="form-control mb-2" asp-for="Nome" required />
 

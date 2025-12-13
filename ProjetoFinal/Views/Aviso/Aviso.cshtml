@@ -4,6 +4,10 @@
 
 <link href="~/css/aviso.css" rel="stylesheet" />
 
+<video autoplay loop muted playsinline class="bg-video">
+    <source src="@Url.Content("~/videos/videoplaybackgato2.mp4")" type="video/mp4" />
+</video>
+
 <div class="aviso-container">
 
     <div class="aviso-card">
@@ -20,7 +24,16 @@
             Mantenha essa informação em segurança.
         </p>
 
-        <a class="btn-primary-vp large"
+        <p class="aviso-subtext">
+            Código do funcionário cadastrado:
+        </p>
+
+        <input type="text"
+               class="input-codigo-funcionario"
+               value="@ViewBag.CodigoFuncionario"
+               readonly />
+
+        <a class="btn-primary-vp large mt-4"
            asp-controller="LoginFunc3"
            asp-action="LoginFunc3">
             Ir para o Login do Funcionário

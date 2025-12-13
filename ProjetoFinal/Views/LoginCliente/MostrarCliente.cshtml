@@ -2,8 +2,12 @@
 
 <link href="~/css/logincliente.css" rel="stylesheet" />
 
+<video autoplay loop muted playsinline class="bg-video">
+    <source src="@Url.Content("~/videos/videoplaybackgato2.mp4")" type="video/mp4" />
+</video>
+
 <div class="container mt-5" style="max-width: 800px;">
-    <h2 class="text-center mb-4">Dados do Cliente</h2>
+    <h2 class="text-center mb-4" style="color: white;">Dados do Cliente</h2>
 
     <table class="table table-bordered table-striped">
         <tr><th>Código</th><td>@Model.Cliente.Codigo_Usuario</td></tr>
@@ -16,7 +20,7 @@
         <tr><th>Complemento</th><td>@Model.Cliente.Endereco.Complemento</td></tr>
     </table>
 
-    <h3 class="mt-5 mb-3">Pets e Planos</h3>
+    <h3 class="mt-5 mb-3" style="color: white;">Pets e Planos</h3>
     <table class="table table-bordered table-striped">
         <thead class="table-secundary">
             <tr>

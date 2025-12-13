@@ -4,14 +4,18 @@
     ViewData["Title"] = "Confirmar Pagamento";
 }
 
+<link href="~/css/ConfirmarPagamento.css" rel="stylesheet" />
+
+<video autoplay loop muted playsinline class="bg-video">
+    <source src="@Url.Content("~/videos/wavesplayback.mp4")" type="video/mp4" />
+</video>
+
 <div class="container mt-5" style="max-width: 600px;">
     <h2 class="text-center mb-4">Confirme o Pagamento</h2>
 
     <p class="text-center mb-4">
         O cliente efetuou o pagamento corretamente?
     </p>
-
-    <div class="d-flex flex-column gap-3">
         <!-- Botão Confirmar -->
         <form asp-controller="AtribuirPlano" asp-action="AtribuirPlano" method="post">
             <input type="hidden" asp-for="Codigo_Pagamento" />
@@ -19,8 +23,7 @@
         </form>
 
         <!-- Botão Voltar -->
-        <a asp-controller="Pagamento" asp-action="Cadastrar" class="btn btn-secondary w-100">
+        <a asp-controller="Pagamento" asp-action="Cadastrar" class="btn btn-secondary w-100 mt-3">
             Voltar
         </a>
-    </div>
 </div>

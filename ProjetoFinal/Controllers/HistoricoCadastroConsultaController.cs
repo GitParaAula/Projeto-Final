@@ -8,10 +8,6 @@ namespace ProjetoFinal.Controllers
     {
         private readonly string connectionString =
             "server=localhost;database=dbTcm;uid=root;pwd=12345678;";
-
-        // ===============================
-        // LISTAR ÚLTIMOS 10 REGISTROS
-        // ===============================
         public IActionResult Listar(int codigoFuncionario)
         {
             List<HistoricoCadastro> lista = new();
